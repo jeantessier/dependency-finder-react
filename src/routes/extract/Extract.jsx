@@ -1,11 +1,10 @@
+import ExtractMetadata from './ExtractMetadata'
 import './Extract.css'
 
 export default function Extract() {
     return (
         <>
-            <div className={'extract-data'}>
-                <p>Metadata goes here.</p>
-            </div>
+            <ExtractMetadata />
             <div className={'extract-controls'}>
                 <p>Extract controls go here.</p>
             </div>

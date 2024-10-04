@@ -1,0 +1,11 @@
+.extract-metadata-name {
+    font-weight: bold;
+}
+
+.extract-metadata-value {
+    font-family: monospace;
+}
+
+.extract-metadata-error {
+    color: red;
+}
