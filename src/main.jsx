@@ -2,8 +2,8 @@ import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 import { createBrowserRouter, RouterProvider } from "react-router-dom"
 import App from './App'
-import Extract from "./routes/extract";
-import Load from "./routes/load";
+import Extract from "./routes/extract"
+import Load from "./routes/load"
 import Notfound from "./routes/notfound"
 import './index.css'
 
