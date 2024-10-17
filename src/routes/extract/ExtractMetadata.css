@@ -1,11 +1,11 @@
-.extract-metadata-name {
-    font-weight: bold;
+.extract-metadata {
+    text-align: left;
 }
 
-.extract-metadata-value {
+.extract-metadata .value {
     font-family: monospace;
 }
 
-.extract-metadata-error {
+.extract-metadata .error {
     color: red;
 }
