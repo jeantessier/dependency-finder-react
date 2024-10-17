@@ -11,6 +11,8 @@ function App() {
     <>
       <div>
         <Link to="/extract">extract</Link>
+          &nbsp;
+        <Link to="/load">load</Link>
       </div>
       <div>
         <a href="https://vitejs.dev" target="_blank">

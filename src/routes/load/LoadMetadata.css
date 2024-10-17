@@ -1,0 +1,11 @@
+.load-metadata {
+    text-align: left;
+}
+
+.load-metadata .value {
+    font-family: monospace;
+}
+
+.load-metadata .error {
+    color: red;
+}

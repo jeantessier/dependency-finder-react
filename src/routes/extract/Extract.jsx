@@ -1,6 +1,6 @@
 import ExtractMetadata from './ExtractMetadata'
 import ExtractControls from './ExtractControls.jsx'
-import ExtractResults from './ExtractResults.jsx'
+import Stats from '../../shared/Stats.jsx'
 import './Extract.css'
 
 export default function Extract() {
@@ -8,7 +8,7 @@ export default function Extract() {
         <>
             <ExtractMetadata />
             <ExtractControls />
-            <ExtractResults />
+            <Stats />
         </>
     )
 }
