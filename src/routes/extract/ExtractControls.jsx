@@ -1,14 +1,34 @@
 import { useForm } from "react-hook-form";
 import useExtractMetadata from "../../hooks/useExtractMetadata";
+import useStats from "../../hooks/useStats";
+import { EXTRACT_URL } from "../../lib/constants.js";
 import './ExtractControls.css'
 
 export default function ExtractControls() {
     const { register, handleSubmit } = useForm()
 
-    const { metadata } = useExtractMetadata()
-    const label = metadata && metadata.graph ? metadata.graph.label : ''
+    const { stats, mutate } = useStats()
+    const label = stats ? stats.label : ''
 
-    const onSubmit = (data) => console.log(data)
+    const { metadata } = useExtractMetadata()
+
+    const onSubmit = (data) => {
+        console.log(data)
+        const request = new Request(EXTRACT_URL, {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify(data),
+            redirect: "manual",
+        })
+        fetch(request)
+            .then(response => {
+                console.log(`Fetched ${request.url}, got response:`)
+                console.log(response)
+                mutate()
+            })
+    }
 
     return (
         <div className={'extract-controls'}>

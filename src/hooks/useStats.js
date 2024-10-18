@@ -1,13 +1,14 @@
 import useSWR from "swr"
-import { SERVER_BASE_URL } from "../lib/constants"
+import { STATS_URL } from "../lib/constants"
 import { fetcher } from "../lib/fetcher"
 
 export default function useStats() {
-    const { data, error, isLoading } = useSWR(SERVER_BASE_URL + '/stats', fetcher)
+    const { data, error, isLoading, mutate } = useSWR(STATS_URL, fetcher)
 
     return {
-        metadata: data,
+        stats: data,
         isLoading,
         isError: error,
+        mutate,
     }
 }
