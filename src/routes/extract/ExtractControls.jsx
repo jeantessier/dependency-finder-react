@@ -1,5 +1,4 @@
 import { useForm } from "react-hook-form";
-import useExtractMetadata from "../../hooks/useExtractMetadata";
 import useStats from "../../hooks/useStats";
 import { EXTRACT_URL } from "../../lib/constants.js";
 import './ExtractControls.css'
@@ -9,8 +8,6 @@ export default function ExtractControls() {
 
     const { stats, mutate } = useStats()
     const label = stats ? stats.label : ''
-
-    const { metadata } = useExtractMetadata()
 
     const onSubmit = (data) => {
         console.log(data)
@@ -36,7 +33,7 @@ export default function ExtractControls() {
             <form onSubmit={handleSubmit(onSubmit)}>
                 <button type={'submit'} className={'extract-controls-submit'}>Launch</button>
                 optional label: <input {... register("label")} defaultValue={label} />
-                {metadata && metadata.graph.extractStart &&
+                {stats && stats.extractStart &&
                     <>
                         <br/>
                         <label title="Uncheck to discard the current graph and extract a new one from scratch" htmlFor="update">
