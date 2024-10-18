@@ -1,0 +1,11 @@
+.title {
+    text-align: center;
+    font-family: courier, monospace;
+    font-weight: bold;
+    font-size: larger;
+    padding: 2rem 0rem;
+}
+
+.title .label {
+    padding-left: 1rem;
+}
