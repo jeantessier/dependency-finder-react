@@ -9,3 +9,11 @@
 .extract-metadata .error {
     color: red;
 }
+
+.extract-metadata .source {
+    list-style-type: none;
+}
+
+.extract-metadata .regex {
+    list-style-type: none;
+}

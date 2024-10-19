@@ -9,3 +9,7 @@
 .load-metadata .error {
     color: red;
 }
+
+.load-metadata .file {
+    list-style-type: none;
+}

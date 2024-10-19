@@ -14,11 +14,11 @@ export default function LoadMetadata() {
 
     return (
         <div className={'load-metadata'}>
-            <div className={'file'}>
+            <div className={'files'}>
                 This operation will load a dependency graph from the following locations:
                 <ul>
                     {metadata.load.files.map(filename =>
-                        <li key={'source-filename-' + filename} className={'value'}>{filename}</li>
+                        <li key={'source-filename-' + filename} className={'file value'}>{filename}</li>
                     )}
                 </ul>
             </div>

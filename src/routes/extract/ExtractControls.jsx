@@ -7,7 +7,7 @@ import './ExtractControls.css'
 export default function ExtractControls() {
     const { register, handleSubmit } = useForm()
 
-    const [update, setUpdate] = useState(false)
+    const [update, setUpdate] = useState(true)
 
     const handleUpdate = () => {
         setUpdate(!update)

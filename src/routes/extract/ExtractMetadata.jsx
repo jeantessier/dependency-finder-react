@@ -14,11 +14,11 @@ export default function ExtractMetadata() {
 
     return (
         <div className={'extract-metadata'}>
-            <div className={'source'}>
+            <div className={'sources'}>
                 This operation will extract dependencies from the following locations:
                 <ul>
                     {metadata.extract.sources.map(filename =>
-                        <li key={'source-filename-' + filename} className={'value'}>{filename}</li>
+                        <li key={'source-filename-' + filename} className={'source value'}>{filename}</li>
                     )}
                 </ul>
             </div>
@@ -26,7 +26,7 @@ export default function ExtractMetadata() {
                 It will <b>include</b> dependencies on:
                 <ul>
                     {metadata.extract.filterIncludes.map(s =>
-                        <li key={'includes-' + s} className={'value'}>{s}</li>
+                        <li key={'includes-' + s} className={'regex value'}>{s}</li>
                     )}
                 </ul>
             </div>
@@ -34,7 +34,7 @@ export default function ExtractMetadata() {
                 But it will <b>exclude</b> dependencies on:
                 <ul>
                     {metadata.extract.filterExcludes.map(s =>
-                        <li key={'excludes-' + s} className={'value'}>{s}</li>
+                        <li key={'excludes-' + s} className={'regex value'}>{s}</li>
                     )}
                 </ul>
             </div>
