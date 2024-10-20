@@ -31,8 +31,8 @@ export default function LoadControls() {
         <div className={'load-controls'}>
             <br />
             <form onSubmit={handleSubmit(onSubmit)}>
-                <button type={'submit'} className={'load-controls-submit'}>Launch</button>
-                optional label: <input {... register("label")} defaultValue={label} />
+                <span className="launch"><button type={'submit'} className={'load-controls-submit'}>Launch</button></span>
+                <span className="label">optional label: <input {...register("label")} defaultValue={label} /></span>
             </form>
         </div>
     )
