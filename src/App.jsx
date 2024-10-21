@@ -1,8 +1,8 @@
 import { useState } from 'react'
-import { Link } from "react-router-dom";
+import { Link } from 'react-router-dom'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
-import useTitle from './hooks/useTitle.js'
+import useTitle from './hooks/useTitle'
 import './App.css'
 
 function App() {
@@ -13,9 +13,9 @@ function App() {
   return (
     <>
       <div>
-        <Link to="/extract">extract</Link>
-          &nbsp;
-        <Link to="/load">load</Link>
+        <Link className={'navigation'} to="/extract">extract</Link>
+        <Link className={'navigation'} to="/load">load</Link>
+        <Link className={'navigation'} to="/query">query</Link>
       </div>
       <div>
         <a href="https://vitejs.dev" target="_blank">

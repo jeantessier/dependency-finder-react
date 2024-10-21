@@ -1,0 +1,24 @@
+legend {
+    font-weight: bold;
+    text-align: start;
+}
+
+.scope-control {
+    margin: 0 0.5rem;
+}
+
+.filter-control {
+    margin: 0 0.5rem;
+}
+
+.show-control {
+    margin: 0 0.25rem;
+}
+
+.submit {
+    margin: 1rem;
+}
+
+.query-controls-submit {
+    margin: 1rem;
+}

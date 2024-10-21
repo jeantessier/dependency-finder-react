@@ -1,16 +1,15 @@
-import { useForm } from "react-hook-form";
-import useStats from "../../hooks/useStats.js";
-import { LOAD_URL } from "../../lib/constants.js";
+import { useForm } from 'react-hook-form'
+import useStats from '../../hooks/useStats'
+import { LOAD_URL } from '../../lib/constants'
 import './LoadControls.css'
 
 export default function LoadControls() {
     const { register, handleSubmit } = useForm()
 
-    const { stats, mutate } = useStats()
+    const { stats, mutateStats } = useStats()
     const label = stats ? stats.label : ''
 
     const onSubmit = (data) => {
-        console.log(data)
         const request = new Request(LOAD_URL, {
             method: "POST",
             headers: {
@@ -20,11 +19,7 @@ export default function LoadControls() {
             redirect: "manual",
         })
         fetch(request)
-            .then(response => {
-                console.log(`Fetched ${request.url}, got response:`)
-                console.log(response)
-                mutate()
-            })
+            .then(() => mutateStats())
     }
 
     return (

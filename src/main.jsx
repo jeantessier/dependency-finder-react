@@ -4,6 +4,7 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom"
 import App from './App'
 import Extract from "./routes/extract"
 import Load from "./routes/load"
+import Query from "./routes/query"
 import Notfound from "./routes/notfound"
 import './index.css'
 
@@ -20,6 +21,10 @@ const router = createBrowserRouter([
     {
         path: '/load',
         element: <Load/>,
+    },
+    {
+        path: '/query',
+        element: <Query/>,
     }
 ])
 

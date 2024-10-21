@@ -1,14 +1,14 @@
-import useStats from "../hooks/useStats.js"
+import useStats from '../hooks/useStats'
 import './Title.css'
 
 export default function Title() {
-    const { stats, isLoading, isError } = useStats()
+    const { stats, statsLoading, statsError } = useStats()
 
-    if (isLoading) {
+    if (statsLoading) {
         return <p>loading ...</p>
     }
 
-    if (isError) {
+    if (statsError) {
         return <p className={'stats error'}>error loading stats</p>
     }
 

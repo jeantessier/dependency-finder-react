@@ -1,8 +1,8 @@
 import ExtractMetadata from './ExtractMetadata'
-import ExtractControls from './ExtractControls.jsx'
-import Stats from '../../shared/Stats.jsx'
-import Title from '../../shared/Title.jsx'
-import useTitle from '../../hooks/useTitle.js'
+import ExtractControls from './ExtractControls'
+import Stats from '../../shared/Stats'
+import Title from '../../shared/Title'
+import useTitle from '../../hooks/useTitle'
 import './Extract.css'
 
 export default function Extract() {

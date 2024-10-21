@@ -2,13 +2,13 @@ import useLoadMetadata from '../../hooks/useLoadMetadata'
 import './LoadMetadata.css'
 
 export default function LoadMetadata() {
-    const { metadata, isLoading, isError } = useLoadMetadata()
+    const { loadMetadata, loadMetadataLoading, loadMetadataError } = useLoadMetadata()
 
-    if (isLoading) {
+    if (loadMetadataLoading) {
         return <p>loading ...</p>
     }
 
-    if (isError) {
+    if (loadMetadataError) {
         return <p className={'load-metadata error'}>error loading metadata</p>
     }
 
@@ -17,7 +17,7 @@ export default function LoadMetadata() {
             <div className={'files'}>
                 This operation will load a dependency graph from the following locations:
                 <ul>
-                    {metadata.load.files.map(filename =>
+                    {loadMetadata.load.files.map(filename =>
                         <li key={'source-filename-' + filename} className={'file value'}>{filename}</li>
                     )}
                 </ul>

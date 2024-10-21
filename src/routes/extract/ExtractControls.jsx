@@ -1,7 +1,7 @@
-import { useState } from "react";
-import { useForm } from "react-hook-form";
-import useStats from "../../hooks/useStats";
-import { EXTRACT_URL } from "../../lib/constants.js";
+import { useState } from 'react'
+import { useForm } from 'react-hook-form'
+import useStats from '../../hooks/useStats'
+import { EXTRACT_URL } from '../../lib/constants'
 import './ExtractControls.css'
 
 export default function ExtractControls() {
@@ -13,11 +13,10 @@ export default function ExtractControls() {
         setUpdate(!update)
     }
 
-    const { stats, mutate } = useStats()
+    const { stats, mutateStats } = useStats()
     const label = stats ? stats.label : ''
 
     const onSubmit = (data) => {
-        console.log(data)
         const request = new Request(EXTRACT_URL, {
             method: "POST",
             headers: {
@@ -27,11 +26,7 @@ export default function ExtractControls() {
             redirect: "manual",
         })
         fetch(request)
-            .then(response => {
-                console.log(`Fetched ${request.url}, got response:`)
-                console.log(response)
-                mutate()
-            })
+            .then(() => mutateStats())
     }
 
     return (

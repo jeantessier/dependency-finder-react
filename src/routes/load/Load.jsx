@@ -1,8 +1,8 @@
 import LoadMetadata from './LoadMetadata'
-import LoadControls from './LoadControls.jsx'
-import Stats from '../../shared/Stats.jsx'
-import Title from '../../shared/Title.jsx'
-import useTitle from '../../hooks/useTitle.js'
+import LoadControls from './LoadControls'
+import Stats from '../../shared/Stats'
+import Title from '../../shared/Title'
+import useTitle from '../../hooks/useTitle'
 import './Load.css'
 
 export default function Load() {

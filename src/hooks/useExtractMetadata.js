@@ -1,13 +1,13 @@
-import useSWR from "swr"
-import { EXTRACT_URL } from "../lib/constants"
-import { fetcher } from "../lib/fetcher"
+import useSWR from 'swr'
+import { EXTRACT_URL } from '../lib/constants'
+import { fetcher } from '../lib/fetcher'
 
 export default function useExtractMetadata() {
     const { data, error, isLoading } = useSWR(EXTRACT_URL, fetcher)
 
     return {
-        metadata: data,
-        isLoading,
-        isError: error,
+        extractMetadata: data,
+        extractMetadataLoading: isLoading,
+        extractMetadataError: error,
     }
 }
