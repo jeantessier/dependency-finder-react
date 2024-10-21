@@ -6,8 +6,8 @@ export default function useLoadMetadata() {
     const { data, error, isLoading } = useSWR(LOAD_URL, fetcher)
 
     return {
-        loadMetadata: data,
-        loadMetadataLoading: isLoading,
-        loadMetadataError: error,
+        metadata: data,
+        isLoading,
+        isError: error,
     }
 }

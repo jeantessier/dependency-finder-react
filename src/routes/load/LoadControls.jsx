@@ -6,7 +6,7 @@ import './LoadControls.css'
 export default function LoadControls() {
     const { register, handleSubmit } = useForm()
 
-    const { stats, mutateStats } = useStats()
+    const { stats, mutate } = useStats()
     const label = stats ? stats.label : ''
 
     const onSubmit = (data) => {
@@ -19,7 +19,7 @@ export default function LoadControls() {
             redirect: "manual",
         })
         fetch(request)
-            .then(() => mutateStats())
+            .then(mutate)
     }
 
     return (

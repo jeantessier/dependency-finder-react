@@ -7,8 +7,8 @@ export default function useStats() {
 
     return {
         stats: data,
-        statsLoading: isLoading,
-        statsError: error,
-        mutateStats: mutate,
+        isLoading,
+        isError: error,
+        mutate,
     }
 }

@@ -2,13 +2,13 @@ import useStats from '../hooks/useStats'
 import './Title.css'
 
 export default function Title() {
-    const { stats, statsLoading, statsError } = useStats()
+    const { stats, isLoading, isError } = useStats()
 
-    if (statsLoading) {
+    if (isLoading) {
         return <p>loading ...</p>
     }
 
-    if (statsError) {
+    if (isError) {
         return <p className={'stats error'}>error loading stats</p>
     }
 

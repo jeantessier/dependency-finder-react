@@ -13,7 +13,7 @@ export default function ExtractControls() {
         setUpdate(!update)
     }
 
-    const { stats, mutateStats } = useStats()
+    const { stats, mutate } = useStats()
     const label = stats ? stats.label : ''
 
     const onSubmit = (data) => {
@@ -26,7 +26,7 @@ export default function ExtractControls() {
             redirect: "manual",
         })
         fetch(request)
-            .then(() => mutateStats())
+            .then(mutate)
     }
 
     return (

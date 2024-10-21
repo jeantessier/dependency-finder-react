@@ -6,8 +6,8 @@ export default function useExtractMetadata() {
     const { data, error, isLoading } = useSWR(EXTRACT_URL, fetcher)
 
     return {
-        extractMetadata: data,
-        extractMetadataLoading: isLoading,
-        extractMetadataError: error,
+        metadata: data,
+        isLoading,
+        isError: error,
     }
 }

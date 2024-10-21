@@ -7,7 +7,7 @@ export default function useVersion() {
 
     return {
         version: data,
-        versionLoading: isLoading,
-        versionError: error,
+        isLoading,
+        isError: error,
     }
 }

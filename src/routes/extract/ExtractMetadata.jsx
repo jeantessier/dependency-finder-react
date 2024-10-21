@@ -2,13 +2,13 @@ import useExtractMetadata from '../../hooks/useExtractMetadata'
 import './ExtractMetadata.css'
 
 export default function ExtractMetadata() {
-    const { extractMetadata, extractMetadataLoading, extractMetadataError } = useExtractMetadata()
+    const { metadata, isLoading, isError } = useExtractMetadata()
 
-    if (extractMetadataLoading) {
+    if (isLoading) {
         return <p>loading ...</p>
     }
 
-    if (extractMetadataError) {
+    if (isError) {
         return <p className={'extract-metadata error'}>error loading metadata</p>
     }
 
@@ -17,7 +17,7 @@ export default function ExtractMetadata() {
             <div className={'sources'}>
                 This operation will extract dependencies from the following locations:
                 <ul>
-                    {extractMetadata.extract.sources.map(filename =>
+                    {metadata.extract.sources.map(filename =>
                         <li key={'source-filename-' + filename} className={'source value'}>{filename}</li>
                     )}
                 </ul>
@@ -25,7 +25,7 @@ export default function ExtractMetadata() {
             <div className={'filter-includes'}>
                 It will <b>include</b> dependencies on:
                 <ul>
-                    {extractMetadata.extract.filterIncludes.map(s =>
+                    {metadata.extract.filterIncludes.map(s =>
                         <li key={'includes-' + s} className={'regex value'}>{s}</li>
                     )}
                 </ul>
@@ -33,7 +33,7 @@ export default function ExtractMetadata() {
             <div className={'filter-excludes'}>
                 But it will <b>exclude</b> dependencies on:
                 <ul>
-                    {extractMetadata.extract.filterExcludes.map(s =>
+                    {metadata.extract.filterExcludes.map(s =>
                         <li key={'excludes-' + s} className={'regex value'}>{s}</li>
                     )}
                 </ul>

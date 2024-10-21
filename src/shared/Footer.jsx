@@ -4,14 +4,14 @@ import useVersion from '../hooks/useVersion'
 import './Footer.css'
 
 export default function Footer() {
-    const { stats, statsLoading, statsError } = useStats()
-    const { version, versionLoading, versionError } = useVersion()
+    const { stats, isLoading: statsIsLoading, isError: statsIsError } = useStats()
+    const { version, isLoading: versionIsLoading, isError: versionIsError } = useVersion()
 
-    if (statsLoading || versionLoading) {
+    if (statsIsLoading || versionIsLoading) {
         return <p>loading ...</p>
     }
 
-    if (statsError || versionError) {
+    if (statsIsError || versionIsError) {
         return <p>error loading data</p>
     }
 
