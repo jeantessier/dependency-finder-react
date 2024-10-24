@@ -1,8 +1,9 @@
+import PropTypes from 'prop-types'
 import { INBOUND, OUTBOUND, BIDIRECTIONAL } from '../../lib/constants'
 import Dependency from './Dependency'
 import './Dependencies.css'
 
-export default function Dependencies({ inbounds, outbounds }) {
+function Dependencies({ inbounds, outbounds }) {
     const dependencies = new Map()
     const confirmations = new Map()
 
@@ -23,3 +24,10 @@ export default function Dependencies({ inbounds, outbounds }) {
         </blockquote>
     )
 }
+
+Dependencies.propTypes = {
+    inbounds: PropTypes.array.isRequired,
+    outbounds: PropTypes.array.isRequired,
+}
+
+export default Dependencies

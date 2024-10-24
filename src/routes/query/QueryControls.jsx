@@ -2,8 +2,9 @@ import { useState } from 'react'
 import { useForm } from 'react-hook-form'
 import { QUERY_URL, INBOUND, OUTBOUND } from '../../lib/constants'
 import './QueryControls.css'
+import PropTypes from "prop-types";
 
-export default function QueryControls({ setQueryResults }) {
+function QueryControls({ setQueryResults }) {
     const { register, handleSubmit } = useForm()
 
     const [scopeIncludes, setScopeIncludes] = useState('//')
@@ -233,3 +234,9 @@ export default function QueryControls({ setQueryResults }) {
         </div>
     )
 }
+
+QueryControls.propTypes = {
+    setQueryResults: PropTypes.func.isRequired,
+}
+
+export default QueryControls

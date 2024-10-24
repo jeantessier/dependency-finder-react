@@ -1,8 +1,9 @@
+import PropTypes from 'prop-types'
 import QueryResults from './QueryResults'
 import Dependencies from './Dependencies'
 import './QueryResult.css'
 
-export default function QueryResult({ queryResult }) {
+function QueryResult({ queryResult }) {
     return (
         <div className="query-result">
             <div className={queryResult.confirmed ? 'scope name' : 'scope name inferred'}>{queryResult.name}{!queryResult.confirmed && ' *'}</div>
@@ -18,3 +19,9 @@ export default function QueryResult({ queryResult }) {
         </div>
     )
 }
+
+QueryResult.propTypes = {
+    queryResult: PropTypes.object.isRequired,
+}
+
+export default QueryResult

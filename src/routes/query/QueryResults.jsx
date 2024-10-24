@@ -1,7 +1,8 @@
+import PropTypes from 'prop-types'
 import QueryResult from './QueryResult'
 import './QueryResults.css'
 
-export default function QueryResults({ queryResults }) {
+function QueryResults({ queryResults }) {
     return (
         <div className="query-results">
             {queryResults.map(result => (
@@ -10,3 +11,9 @@ export default function QueryResults({ queryResults }) {
         </div>
     )
 }
+
+QueryResults.propTypes = {
+    queryResults: PropTypes.array.isRequired,
+}
+
+export default QueryResults
