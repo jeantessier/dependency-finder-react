@@ -1,8 +1,9 @@
 import { useState } from 'react'
 import { useForm } from 'react-hook-form'
 import { QUERY_URL, INBOUND, OUTBOUND } from '../../lib/constants'
+import Title from '../../shared/Title'
 import './QueryControls.css'
-import PropTypes from "prop-types";
+import PropTypes from 'prop-types'
 
 function QueryControls({ setQueryResults }) {
     const { register, handleSubmit } = useForm()
@@ -86,10 +87,12 @@ function QueryControls({ setQueryResults }) {
     }
 
     return (
-        <div className="QueryControls">
+        <div className="query-controls">
             <form onSubmit={handleSubmit(onSubmit)}>
 
-                <div className="scope-controls">
+                <Title />
+
+                <div className="scope-controls blue">
                     <fieldset>
                         <legend>Select programming elements</legend>
                         <span className="scope-control">
@@ -122,22 +125,24 @@ function QueryControls({ setQueryResults }) {
                                        onChange={handleFeatureScope}/> packages
                             </label>
                         </span>
-                        <div className="scope-regex">
-                            includes:
+                        <div className="regex">
+                            <label htmlFor="scopeIncludes">includes:</label>
                             <input {...register("scopeIncludes")}
+                                   name="scopeIncludes" id="scopeIncludes"
+                                   size={40}
                                    defaultValue={scopeIncludes}
                                    onChange={handleScopeIncludes}/>
-                        </div>
-                        <div className="scope-regex">
-                            excludes:
+                            <label htmlFor="scopeExcludes">excludes:</label>
                             <input {...register("scopeExcludes")}
+                                   name="scopeExcludes" id="scopeExcludes"
+                                   size={40}
                                    defaultValue={scopeExcludes}
                                    onChange={handleScopeExcludes}/>
                         </div>
                     </fieldset>
                 </div>
 
-                <div className="filter-controls">
+                <div className="filter-controls blue">
                     <fieldset>
                         <legend>Show dependencies</legend>
                         <span className="filter-control">
@@ -172,22 +177,24 @@ function QueryControls({ setQueryResults }) {
                                        onChange={handleFeatureFilter}/> packages
                             </label>
                         </span>
-                        <div className="filter-regex">
-                            includes:
+                        <div className="regex">
+                            <label htmlFor="filterIncludes">includes:</label>
                             <input {...register("filterIncludes")}
+                                   name="filterIncludes" id="filterIncludes"
+                                   size={40}
                                    defaultValue={filterIncludes}
                                    onChange={handleFilterIncludes}/>
-                        </div>
-                        <div className="filter-regex">
-                            excludes:
+                            <label htmlFor="filterExcludes">excludes:</label>
                             <input {...register("filterExcludes")}
+                                   name="filterExcludes" id="filterExcludes"
+                                   size={40}
                                    defaultValue={filterExcludes}
                                    onChange={handleFilterExcludes}/>
                         </div>
                     </fieldset>
                 </div>
 
-                <div className="show-controls">
+                <div className="show-controls blue">
                     <fieldset>
                         <span className="show-control">Show</span>
                         <span className="show-control">

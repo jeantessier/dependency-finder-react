@@ -1,5 +1,4 @@
 import { useState } from 'react'
-import Title from '../../shared/Title'
 import Footer from '../../shared/Footer'
 import useTitle from '../../hooks/useTitle'
 import QueryControls from './QueryControls'
@@ -13,9 +12,8 @@ export default function Query() {
 
     return (
         <>
-            <Title />
             <QueryControls setQueryResults={setQueryResults} />
-            <QueryResults queryResults={queryResults} />
+            <QueryResults queryResults={queryResults} type="packages" />
             <Footer />
         </>
     )

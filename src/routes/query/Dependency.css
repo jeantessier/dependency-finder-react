@@ -1,3 +1,7 @@
+.dependency {
+    margin-left: 40px;
+}
+
 .inferred {
     color: gray;
 }

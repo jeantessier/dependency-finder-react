@@ -2,4 +2,9 @@
     text-align: start;
     font-family: monospace;
     text-wrap: nowrap;
+    margin-left: 4ch;
+}
+
+.query-results.packages {
+    margin-left: 0;
 }
