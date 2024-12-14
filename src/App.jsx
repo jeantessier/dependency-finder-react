@@ -16,6 +16,7 @@ function App() {
         <Link className={'navigation'} to="/extract">extract</Link>
         <Link className={'navigation'} to="/load">load</Link>
         <Link className={'navigation'} to="/query">query</Link>
+        <Link className={'navigation'} to="/closure">closure</Link>
       </div>
       <div>
         <a href="https://vitejs.dev" target="_blank">

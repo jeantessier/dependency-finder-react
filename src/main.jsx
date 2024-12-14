@@ -5,6 +5,7 @@ import App from './App'
 import Extract from "./routes/extract"
 import Load from "./routes/load"
 import Query from "./routes/query"
+import Closure from "./routes/closure"
 import Notfound from "./routes/notfound"
 import './index.css'
 
@@ -25,6 +26,10 @@ const router = createBrowserRouter([
     {
         path: '/query',
         element: <Query/>,
+    },
+    {
+        path: '/closure',
+        element: <Closure/>,
     }
 ])
 
