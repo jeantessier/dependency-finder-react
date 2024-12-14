@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types'
 import ClosureResults from './ClosureResults'
-import Dependencies from './Dependencies'
+import Dependencies from '../../shared/Dependencies'
 import './ClosureResult.css'
 
 function ClosureResult({ closureResult }) {

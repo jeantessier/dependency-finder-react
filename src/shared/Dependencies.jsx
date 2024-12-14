@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types'
-import { INBOUND, OUTBOUND, BIDIRECTIONAL } from '../../lib/constants'
+import { INBOUND, OUTBOUND, BIDIRECTIONAL } from '../lib/constants'
 import Dependency from './Dependency'
 import './Dependencies.css'
 

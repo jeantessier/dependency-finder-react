@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types'
 import QueryResults from './QueryResults'
-import Dependencies from './Dependencies'
+import Dependencies from '../../shared/Dependencies'
 import './QueryResult.css'
 
 function QueryResult({ queryResult }) {
