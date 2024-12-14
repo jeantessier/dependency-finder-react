@@ -148,6 +148,7 @@ function ClosureControls({ setClosureResults }) {
                                        id="packageScope"
                                        type="radio"
                                        value="package"
+                                       checked={scope === 'package'}
                                        onChange={handleScope}/> package
                             </label>
                         </span>
@@ -158,6 +159,7 @@ function ClosureControls({ setClosureResults }) {
                                        id="classScope"
                                        type="radio"
                                        value="class"
+                                       checked={scope === 'class'}
                                        onChange={handleScope}/> class
                             </label>
                         </span>
@@ -168,6 +170,7 @@ function ClosureControls({ setClosureResults }) {
                                        id="featureScope"
                                        type="radio"
                                        value="feature"
+                                       checked={scope === 'feature'}
                                        onChange={handleScope}/> feature
                             </label>
                         </span>
@@ -184,6 +187,7 @@ function ClosureControls({ setClosureResults }) {
                                        id="packageFilter"
                                        type="radio"
                                        value="package"
+                                       checked={filter === 'package'}
                                        onChange={handleFilter}/> package
                             </label>
                         </span>
@@ -194,6 +198,7 @@ function ClosureControls({ setClosureResults }) {
                                        id="classFilter"
                                        type="radio"
                                        value="class"
+                                       checked={filter === 'class'}
                                        onChange={handleFilter}/> class
                             </label>
                         </span>
@@ -204,6 +209,7 @@ function ClosureControls({ setClosureResults }) {
                                        id="featureFilter"
                                        type="radio"
                                        value="feature"
+                                       checked={filter === 'feature'}
                                        onChange={handleFilter}/> feature
                             </label>
                         </span>
