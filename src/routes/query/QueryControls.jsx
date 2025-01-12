@@ -122,7 +122,7 @@ function QueryControls({ setQueryResults }) {
                                 <input {...register("featureScope")} type="checkbox"
                                        name="featureScope" id="featureScope"
                                        checked={featureScope}
-                                       onChange={handleFeatureScope}/> packages
+                                       onChange={handleFeatureScope}/> features
                             </label>
                         </span>
                         <div className="regex">
@@ -174,7 +174,7 @@ function QueryControls({ setQueryResults }) {
                                        type="checkbox"
                                        name="featureFilter" id="featureFilter"
                                        checked={featureFilter}
-                                       onChange={handleFeatureFilter}/> packages
+                                       onChange={handleFeatureFilter}/> features
                             </label>
                         </span>
                         <div className="regex">
