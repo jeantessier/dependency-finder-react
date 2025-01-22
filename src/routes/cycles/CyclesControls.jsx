@@ -59,7 +59,7 @@ function CyclesControls({ setCyclesResults }) {
 
                 <div className="scope-controls blue">
                     <fieldset>
-                        <legend>Select programming elements</legend>
+                        <legend>Start with programming elements</legend>
                         <span className="scope-control">
                             <label
                                 title="Check to include matching package nodes in query results."
