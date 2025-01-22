@@ -67,7 +67,7 @@ function ClosureControls({ setClosureResults }) {
 
                 <Title />
 
-                <div className="start-controls blue">
+                <div className="closure-start-controls blue">
                     <fieldset>
                         <legend>Start with programming elements</legend>
                         <div className="regex">
@@ -87,7 +87,7 @@ function ClosureControls({ setClosureResults }) {
                     </fieldset>
                 </div>
 
-                <div className="stop-controls blue">
+                <div className="closure-stop-controls blue">
                     <fieldset>
                         <legend>Stop with programming elements</legend>
                         <div className="regex">
@@ -107,7 +107,7 @@ function ClosureControls({ setClosureResults }) {
                     </fieldset>
                 </div>
 
-                <div className="depth-controls blue">
+                <div className="closure-depth-controls blue">
                     <fieldset>
                         <span className="depth-control">
                             <label
@@ -138,7 +138,7 @@ function ClosureControls({ setClosureResults }) {
                     </fieldset>
                 </div>
 
-                <div className="scope-controls blue">
+                <div className="closure-scope-controls blue">
                     <fieldset>
                         <legend>Summarize programming elements</legend>
                         <span>
@@ -177,7 +177,7 @@ function ClosureControls({ setClosureResults }) {
                     </fieldset>
                 </div>
 
-                <div className="filter-controls blue">
+                <div className="closure-filter-controls blue">
                     <fieldset>
                         <legend>Summarize dependencies</legend>
                         <span>

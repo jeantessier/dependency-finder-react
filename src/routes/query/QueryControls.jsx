@@ -92,7 +92,7 @@ function QueryControls({ setQueryResults }) {
 
                 <Title />
 
-                <div className="scope-controls blue">
+                <div className="query-scope-controls blue">
                     <fieldset>
                         <legend>Select programming elements</legend>
                         <span className="scope-control">
@@ -142,7 +142,7 @@ function QueryControls({ setQueryResults }) {
                     </fieldset>
                 </div>
 
-                <div className="filter-controls blue">
+                <div className="query-filter-controls blue">
                     <fieldset>
                         <legend>Show dependencies</legend>
                         <span className="filter-control">

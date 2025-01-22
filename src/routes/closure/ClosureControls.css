@@ -18,7 +18,7 @@ legend {
     grid-column: 1 / -1;
 }
 
-.start-controls {
+.closure-start-controls {
     margin-left: 0.5rem;
 }
 
@@ -29,11 +29,11 @@ legend {
     margin-top: 0.5rem;
 }
 
-.stop-controls {
+.closure-stop-controls {
     margin-right: 0.5rem;
 }
 
-.depth-controls {
+.closure-depth-controls {
     margin: 0 0.5rem;
     grid-column: 1 / -1;
 }
@@ -42,12 +42,12 @@ legend {
     margin: 0 0.5rem;
 }
 
-.scope-controls {
+.closure-scope-controls {
     margin-left: 0.5rem;
     margin-top: 1rem;
 }
 
-.filter-controls {
+.closure-filter-controls {
     margin-right: 0.5rem;
     margin-top: 1rem;
 }
