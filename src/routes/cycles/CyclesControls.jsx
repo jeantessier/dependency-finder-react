@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types'
 import { useState } from 'react'
 import { useForm } from 'react-hook-form'
-import { CYCLES_URL, INBOUND, OUTBOUND } from '../../lib/constants'
+import { CYCLES_URL } from '../../lib/constants'
 import Title from '../../shared/Title'
 import './CyclesControls.css'
 
