@@ -1,0 +1,15 @@
+.cycle-results {
+    margin: 1rem;
+}
+
+.cycle-node .marker {
+    margin-right: 0.5rem;
+}
+
+.cycle-node:first-child .marker {
+    display: none;
+}
+
+.cycle-node .type {
+    display: none;
+}

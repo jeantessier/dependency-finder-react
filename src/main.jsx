@@ -6,6 +6,7 @@ import Extract from "./routes/extract"
 import Load from "./routes/load"
 import Query from "./routes/query"
 import Closure from "./routes/closure"
+import Cycles from "./routes/cycles"
 import Notfound from "./routes/notfound"
 import './index.css'
 
@@ -30,6 +31,10 @@ const router = createBrowserRouter([
     {
         path: '/closure',
         element: <Closure/>,
+    },
+    {
+        path: '/cycles',
+        element: <Cycles/>,
     }
 ])
 

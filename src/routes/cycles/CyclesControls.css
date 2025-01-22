@@ -1,0 +1,48 @@
+legend {
+    font-weight: bold;
+    text-align: start;
+}
+
+.cycles-controls {
+    margin-bottom: 2rem;
+    width: fit-content;
+}
+
+.cycles-controls form {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.title {
+    margin: 0 0.5rem;
+    grid-column: 1 / -1;
+}
+
+.scope-controls {
+    margin-left: 0.5rem;
+}
+
+.regex {
+    display: grid;
+    grid-template-columns: 9ch auto;
+    row-gap: 0.25rem;
+    margin-top: 0.5rem;
+}
+
+.cycle-length-controls {
+    margin: 0 0.5rem;
+    grid-column: 1 / -1;
+}
+
+.cycle-length-control {
+    margin: 0 0.5rem;
+}
+
+.blue {
+    background-color: #ccccff;
+}
+
+.submit {
+    margin: 1rem;
+    grid-column: 1 / -1;
+}

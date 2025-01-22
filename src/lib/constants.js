@@ -3,6 +3,7 @@ const EXTRACT_URL = SERVER_BASE_URL + "/extract"
 const LOAD_URL = SERVER_BASE_URL + "/load"
 const QUERY_URL = SERVER_BASE_URL + "/query"
 const CLOSURE_URL = SERVER_BASE_URL + "/closure"
+const CYCLES_URL = SERVER_BASE_URL + "/cycles"
 const STATS_URL = SERVER_BASE_URL + "/stats"
 const VERSION_URL = SERVER_BASE_URL + "/version"
 
@@ -16,6 +17,7 @@ export {
     LOAD_URL,
     QUERY_URL,
     CLOSURE_URL,
+    CYCLES_URL,
     STATS_URL,
     VERSION_URL,
 
