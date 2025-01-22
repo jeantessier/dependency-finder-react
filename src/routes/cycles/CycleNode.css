@@ -10,6 +10,10 @@
     display: none;
 }
 
+.cycle-node:first-child .name {
+    font-weight: bold;
+}
+
 .cycle-node .type {
     display: none;
 }

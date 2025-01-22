@@ -57,7 +57,7 @@ function CyclesControls({ setCyclesResults }) {
 
                 <Title />
 
-                <div className="scope-controls blue">
+                <div className="cycle-scope-controls blue">
                     <fieldset>
                         <legend>Start with programming elements</legend>
                         <span className="scope-control">

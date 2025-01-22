@@ -18,8 +18,8 @@ legend {
     grid-column: 1 / -1;
 }
 
-.scope-controls {
-    margin-left: 0.5rem;
+.cycle-scope-controls {
+    grid-column: 1 / -1;
 }
 
 .regex {
@@ -30,7 +30,6 @@ legend {
 }
 
 .cycle-length-controls {
-    margin: 0 0.5rem;
     grid-column: 1 / -1;
 }
 
