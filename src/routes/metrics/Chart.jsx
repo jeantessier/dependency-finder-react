@@ -12,8 +12,6 @@ function Chart({ chart }) {
     // Chart's first row is headers for the various series.
     // We skip it when building series by calling ''chart.slice(1)''.
 
-    const xAxisData = chart.slice(1).map(point => point[0])
-
     // Chart's first column is the x-value.
     // When we build ''series'' below, it has an entry for each
     // column.  We skip the first column with ''.slice(1)'' and
@@ -24,7 +22,7 @@ function Chart({ chart }) {
             name,
             type: 'line',
             smooth: true,
-            data: chart.slice(1).map(point => point[i]),
+            data: chart.slice(1).map(point => [point[0], point[i]]),
         }
     }).slice(1).filter(series => series.data.find(point => point[1] !== 0))
 
@@ -37,15 +35,10 @@ function Chart({ chart }) {
             orient: 'vertical',
         },
         xAxis: {
-            data: xAxisData,
-            name: 'cardinality',
-            nameLocation: 'middle',
-            nameGap: 25,
+            type: 'value',
         },
         yAxis: {
-            name: 'size',
-            nameLocation: 'middle',
-            nameGap: 25,
+            type: 'value',
         },
         series,
     }
