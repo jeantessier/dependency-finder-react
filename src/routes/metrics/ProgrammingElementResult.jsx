@@ -5,7 +5,7 @@ function ProgrammingElementResult({ type, label, programmingElementResult }) {
     return (
         <div className={'programming-element-result ' + type}>
             <span>{programmingElementResult.count} {label}</span>
-            <span>({programmingElementResult.confirmed} confirmed, {programmingElementResult.ratio * 100}%)</span>
+            <span> ({programmingElementResult.confirmed} confirmed, {(programmingElementResult.ratio * 100).toFixed(1)}%)</span>
             {programmingElementResult.elements &&
                 <div className={'programming-elements ' + type}>
                     {programmingElementResult.elements.map(element =>
