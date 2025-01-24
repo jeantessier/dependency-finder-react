@@ -186,7 +186,6 @@ function MetricsControls({ setMetricsResults }) {
 
                 <div className="show-controls blue">
                     <fieldset>
-                        <span className="show-control">Show</span>
                         <span className="show-control">
                             <label
                                 title="Check to list programming elements in metrics results."
