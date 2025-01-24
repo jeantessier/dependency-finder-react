@@ -7,6 +7,7 @@ import Load from "./routes/load"
 import Query from "./routes/query"
 import Closure from "./routes/closure"
 import Cycles from "./routes/cycles"
+import Metrics from "./routes/metrics"
 import Notfound from "./routes/notfound"
 import './index.css'
 
@@ -35,6 +36,10 @@ const router = createBrowserRouter([
     {
         path: '/cycles',
         element: <Cycles/>,
+    },
+    {
+        path: '/metrics',
+        element: <Metrics/>,
     }
 ])
 
