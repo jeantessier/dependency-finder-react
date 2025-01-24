@@ -63,6 +63,16 @@ function MetricsControls({ setMetricsResults }) {
         setListElements(!listElements)
     }
 
+    const [chart, setChart] = useState(false)
+    const handleChart = () => {
+        setChart(!chart)
+    }
+
+    const [histograms, setHistograms] = useState(false)
+    const handleHistograms = () => {
+        setHistograms(!histograms)
+    }
+
     const onSubmit = (data) => {
         const request = new Request(METRICS_URL, {
             method: "POST",
@@ -71,9 +81,15 @@ function MetricsControls({ setMetricsResults }) {
             },
             body: JSON.stringify(data),
         })
+
+        console.log('Sent POST request', data)
+
         fetch(request)
             .then(response => response.json())
-            .then(json => setMetricsResults(json))
+            .then(json => {
+                console.log('Received JSON response', json)
+                setMetricsResults(json)
+            })
     }
 
     return (
@@ -195,6 +211,28 @@ function MetricsControls({ setMetricsResults }) {
                                        name="listElements" id="listElements"
                                        checked={listElements}
                                        onChange={handleListElements}/> List programming elements
+                            </label>
+                        </span>
+                        <span className="show-control">
+                            <label
+                                title="Check to include chart."
+                                htmlFor="chart">
+                                <input {...register("chart")}
+                                       type="checkbox"
+                                       name="chart" id="chart"
+                                       checked={chart}
+                                       onChange={handleChart}/> Chart
+                            </label>
+                        </span>
+                        <span className="show-control">
+                            <label
+                                title="Check to include histograms."
+                                htmlFor="histograms">
+                                <input {...register("histograms")}
+                                       type="checkbox"
+                                       name="histograms" id="histograms"
+                                       checked={histograms}
+                                       onChange={handleHistograms}/> Histograms
                             </label>
                         </span>
                     </fieldset>
