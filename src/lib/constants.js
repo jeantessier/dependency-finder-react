@@ -1,19 +1,19 @@
-const SERVER_BASE_URL = import.meta.env.VITE_SERVER_BASE_URL || import.meta.env.BASE_URL
-const EXTRACT_URL = SERVER_BASE_URL + "/extract"
-const LOAD_URL = SERVER_BASE_URL + "/load"
-const QUERY_URL = SERVER_BASE_URL + "/query"
-const CLOSURE_URL = SERVER_BASE_URL + "/closure"
-const CYCLES_URL = SERVER_BASE_URL + "/cycles"
-const METRICS_URL = SERVER_BASE_URL + "/metrics"
-const STATS_URL = SERVER_BASE_URL + "/stats"
-const VERSION_URL = SERVER_BASE_URL + "/version"
+const SERVER_BASE_URL = import.meta.env.VITE_SERVER_BASE_URL || document.location.origin
+
+const EXTRACT_URL = SERVER_BASE_URL + "/api/extract"
+const LOAD_URL = SERVER_BASE_URL + "/api/load"
+const QUERY_URL = SERVER_BASE_URL + "/api/query"
+const CLOSURE_URL = SERVER_BASE_URL + "/api/closure"
+const CYCLES_URL = SERVER_BASE_URL + "/api/cycles"
+const METRICS_URL = SERVER_BASE_URL + "/api/metrics"
+const STATS_URL = SERVER_BASE_URL + "/api/stats"
+const VERSION_URL = SERVER_BASE_URL + "/api/version"
 
 const INBOUND = '<--'
 const OUTBOUND = '-->'
 const BIDIRECTIONAL = '<->'
 
 export {
-    SERVER_BASE_URL,
     EXTRACT_URL,
     LOAD_URL,
     QUERY_URL,
