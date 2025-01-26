@@ -81,15 +81,9 @@ function MetricsControls({ setMetricsResults }) {
             },
             body: JSON.stringify(data),
         })
-
-        console.log('Sent POST request', data)
-
         fetch(request)
             .then(response => response.json())
-            .then(json => {
-                console.log('Received JSON response', json)
-                setMetricsResults(json)
-            })
+            .then(json => setMetricsResults(json))
     }
 
     return (
