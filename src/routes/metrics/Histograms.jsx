@@ -3,7 +3,8 @@ import Histogram from './Histogram'
 import './Histograms.css'
 
 function Histograms({ histograms }) {
-    return (histograms &&
+    return (
+        histograms &&
             <div className="histograms">
                 <Histogram title="Classes per Package" histogram={histograms.classesPerPackage} />
                 <Histogram title="Features per Class" histogram={histograms.featuresPerClass} />

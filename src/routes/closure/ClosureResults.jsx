@@ -5,9 +5,9 @@ import './ClosureResults.css'
 function ClosureResults({ closureResults, type }) {
     return (
         <div className={`closure-results ${type}`}>
-            {closureResults.map(result => (
+            {closureResults.map(result =>
                 <ClosureResult key={result.name} closureResult={result} />
-            ))}
+            )}
         </div>
     )
 }

@@ -22,10 +22,11 @@ function Histogram({ title, histogram }) {
         ],
     }
 
-    return (histogram.length > 0 &&
-        <div className="histogram">
-            <ReactECharts option={chartOptions} />
-        </div>
+    return (
+        histogram.length > 0 &&
+            <div className="histogram">
+                <ReactECharts option={chartOptions} />
+            </div>
     )
 }
 

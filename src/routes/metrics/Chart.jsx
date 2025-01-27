@@ -43,7 +43,8 @@ function Chart({ chart }) {
         series,
     }
 
-    return (chart &&
+    return (
+        chart &&
             <div className="chart">
                 <ReactECharts option={chartOptions} />
             </div>
