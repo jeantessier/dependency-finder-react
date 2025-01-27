@@ -5,9 +5,10 @@ import './CycleResults.css'
 function CyclesResult({ cycleResults }) {
     return (
         <div className={`cycle-results`}>
-            {cycleResults.map(cycleNode => (
+            {cycleResults.map(cycleNode =>
                 <CycleNode key={cycleNode.name} cycleNode={cycleNode} />
-            ))}
+            )}
+            <CycleNode key={cycleResults[0].name} cycleNode={cycleResults[0]} />
         </div>
     )
 }
