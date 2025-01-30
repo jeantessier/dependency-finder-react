@@ -1,7 +1,7 @@
 import useStats from '../hooks/useStats'
 import './Title.css'
 
-export default function Title() {
+function Title() {
     const { stats, isLoading, isError } = useStats()
 
     if (isLoading) {
@@ -21,3 +21,5 @@ export default function Title() {
         </div>
     )
 }
+
+export default Title

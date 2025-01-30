@@ -1,7 +1,7 @@
 import useStats from '../hooks/useStats'
 import './Stats.css'
 
-export default function Stats() {
+function Stats() {
     const { stats, isLoading, isError } = useStats()
 
     if (isLoading) {
@@ -41,3 +41,5 @@ export default function Stats() {
         </div>
     )
 }
+
+export default Stats

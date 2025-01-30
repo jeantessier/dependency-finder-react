@@ -3,7 +3,7 @@ import useStats from '../hooks/useStats'
 import useVersion from '../hooks/useVersion'
 import './Footer.css'
 
-export default function Footer() {
+function Footer() {
     const { stats, isLoading: statsIsLoading, isError: statsIsError } = useStats()
     const { version, isLoading: versionIsLoading, isError: versionIsError } = useVersion()
 
@@ -39,3 +39,5 @@ export default function Footer() {
         </div>
     )
 }
+
+export default Footer

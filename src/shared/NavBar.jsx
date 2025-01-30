@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom'
 import './NavBar.css'
 
-export default function NavBar() {
+function NavBar() {
     return (
         <div className={'nav-bar blue'}>
             <fieldset className="nav-element minor"><Link className={'navigation'} to="/extract">extract</Link></fieldset>
@@ -13,3 +13,5 @@ export default function NavBar() {
         </div>
     )
 }
+
+export default NavBar
