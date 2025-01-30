@@ -2,6 +2,7 @@ import PropTypes from 'prop-types'
 import { useState } from 'react'
 import { useForm } from 'react-hook-form'
 import { CYCLES_URL } from '../../lib/constants'
+import NavBar from '../../shared/NavBar'
 import Title from '../../shared/Title'
 import './CyclesControls.css'
 
@@ -56,6 +57,8 @@ function CyclesControls({ setCyclesResults }) {
             <form onSubmit={handleSubmit(onSubmit)}>
 
                 <Title />
+
+                <NavBar />
 
                 <div className="cycle-scope-controls blue">
                     <fieldset>

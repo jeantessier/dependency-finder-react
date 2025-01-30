@@ -19,6 +19,7 @@ legend {
 }
 
 .cycle-scope-controls {
+    margin: 0 0.5rem;
     grid-column: 1 / -1;
 }
 
@@ -30,6 +31,7 @@ legend {
 }
 
 .cycle-length-controls {
+    margin: 0 0.5rem;
     grid-column: 1 / -1;
 }
 

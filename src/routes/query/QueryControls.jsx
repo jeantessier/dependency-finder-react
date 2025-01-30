@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { useForm } from 'react-hook-form'
 import { QUERY_URL, INBOUND, OUTBOUND } from '../../lib/constants'
+import NavBar from '../../shared/NavBar'
 import Title from '../../shared/Title'
 import './QueryControls.css'
 import PropTypes from 'prop-types'
@@ -91,6 +92,8 @@ function QueryControls({ setQueryResults }) {
             <form onSubmit={handleSubmit(onSubmit)}>
 
                 <Title />
+
+                <NavBar />
 
                 <div className="query-scope-controls blue">
                     <fieldset>

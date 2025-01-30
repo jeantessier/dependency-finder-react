@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { useForm } from 'react-hook-form'
 import { METRICS_URL } from '../../lib/constants'
+import NavBar from '../../shared/NavBar'
 import Title from '../../shared/Title'
 import './MetricsControls.css'
 import PropTypes from 'prop-types'
@@ -91,6 +92,8 @@ function MetricsControls({ setMetricsResults }) {
             <form onSubmit={handleSubmit(onSubmit)}>
 
                 <Title />
+
+                <NavBar />
 
                 <div className="metrics-scope-controls blue">
                     <fieldset>

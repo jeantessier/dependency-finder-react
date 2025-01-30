@@ -1,5 +1,6 @@
 import ExtractMetadata from './ExtractMetadata'
 import ExtractControls from './ExtractControls'
+import NavBar from '../../shared/NavBar'
 import Stats from '../../shared/Stats'
 import Title from '../../shared/Title'
 import useTitle from '../../hooks/useTitle'
@@ -11,6 +12,7 @@ export default function Extract() {
     return (
         <>
             <Title />
+            <NavBar />
             <ExtractMetadata />
             <ExtractControls />
             <Stats />

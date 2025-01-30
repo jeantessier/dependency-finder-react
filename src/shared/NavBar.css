@@ -1,0 +1,13 @@
+.nav-bar {
+    display: flex;
+    grid-column: 1 / -1;
+    margin: 1rem 0.5rem;
+}
+
+.nav-element.major {
+    flex-grow: 1;
+}
+
+.nav-element.major a {
+    font-weight: bold;
+}

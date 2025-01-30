@@ -2,6 +2,7 @@ import PropTypes from 'prop-types'
 import { useState } from 'react'
 import { useForm } from 'react-hook-form'
 import { CLOSURE_URL, INBOUND, OUTBOUND } from '../../lib/constants'
+import NavBar from '../../shared/NavBar'
 import Title from '../../shared/Title'
 import './ClosureControls.css'
 
@@ -66,6 +67,8 @@ function ClosureControls({ setClosureResults }) {
             <form onSubmit={handleSubmit(onSubmit)}>
 
                 <Title />
+
+                <NavBar />
 
                 <div className="closure-start-controls blue">
                     <fieldset>
