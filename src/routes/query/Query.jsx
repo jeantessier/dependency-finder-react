@@ -10,10 +10,15 @@ export default function Query() {
 
     const [queryResults, setQueryResults] = useState([])
 
+    const onNameClick = name => {
+        const regex = `/^${name.replaceAll(/([$()[\]])/g, '\\$1')}/`
+        console.log(regex)
+    }
+
     return (
         <>
             <QueryControls setQueryResults={setQueryResults} />
-            <QueryResults queryResults={queryResults} type="packages" />
+            <QueryResults queryResults={queryResults} type="packages" onNameClick={onNameClick} />
             <Footer />
         </>
     )

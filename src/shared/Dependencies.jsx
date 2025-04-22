@@ -3,7 +3,7 @@ import { INBOUND, OUTBOUND, BIDIRECTIONAL } from '../lib/constants'
 import Dependency from './Dependency'
 import './Dependencies.css'
 
-function Dependencies({ inbounds, outbounds }) {
+function Dependencies({ inbounds, outbounds, onNameClick }) {
     const dependencies = new Map()
     const confirmations = new Map()
     const types = new Map()
@@ -22,7 +22,7 @@ function Dependencies({ inbounds, outbounds }) {
     return (
         <div className="dependencies">
             {dependencies.keys().toArray().sort().map(name => (
-                <Dependency key={name} direction={dependencies.get(name)} type={types.get(name)} name={name} confirmed={confirmations.get(name)}/>
+                <Dependency key={name} direction={dependencies.get(name)} type={types.get(name)} name={name} confirmed={confirmations.get(name)} onNameClick={onNameClick} />
             ))}
         </div>
     )
@@ -31,6 +31,7 @@ function Dependencies({ inbounds, outbounds }) {
 Dependencies.propTypes = {
     inbounds: PropTypes.array.isRequired,
     outbounds: PropTypes.array.isRequired,
+    onNameClick: PropTypes.func.isRequired,
 }
 
 export default Dependencies
