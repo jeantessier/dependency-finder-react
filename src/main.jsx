@@ -9,7 +9,7 @@ import Closure from "./routes/closure"
 import Cycles from "./routes/cycles"
 import Metrics from "./routes/metrics"
 import Notfound from "./routes/notfound"
-import './index.css'
+import './main.css'
 
 const router = createBrowserRouter([
     {
