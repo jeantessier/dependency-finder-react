@@ -9,7 +9,7 @@ function Name({ name, onNameClick }) {
     }
 
     return (
-        <span onClick={handleClick}>{name}</span>
+        <span className="name" onClick={handleClick}>{name}</span>
     )
 }
 
