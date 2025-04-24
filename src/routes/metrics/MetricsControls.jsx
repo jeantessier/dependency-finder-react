@@ -1,12 +1,16 @@
+import PropTypes from 'prop-types'
 import { useState } from 'react'
 import { useForm } from 'react-hook-form'
+import { Link } from "react-router-dom";
+import useVersion from '../../hooks/useVersion'
 import { METRICS_URL } from '../../lib/constants'
 import NavBar from '../../shared/NavBar'
 import Title from '../../shared/Title'
 import './MetricsControls.css'
-import PropTypes from 'prop-types'
 
 function MetricsControls({ setMetricsResults }) {
+    const { version, isLoading: versionIsLoading, isError: versionIsError } = useVersion()
+
     const { register, handleSubmit } = useForm()
 
     const [scopeIncludes, setScopeIncludes] = useState('//')
@@ -234,6 +238,7 @@ function MetricsControls({ setMetricsResults }) {
                         </span>
                     </fieldset>
                 </div>
+                {(!versionIsLoading && !versionIsError) && <div className="footnote">Use Perl regular expressions, <Link to={version.implementation.url + 'Manual.html#PerlRegularExpressions'}>see the manual</Link>.</div>}
 
                 <span className="submit">
                     <button type="submit" className="metrics-controls-submit">Run Metrics</button>

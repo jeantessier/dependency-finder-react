@@ -42,6 +42,12 @@ legend {
     margin: 0 0.5rem;
 }
 
+.query-controls .footnote {
+    font-size: smaller;
+    margin: 0 0.5rem;
+    text-align: left;
+}
+
 .blue {
     background-color: #ccccff;
 }

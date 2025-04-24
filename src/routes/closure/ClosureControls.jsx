@@ -1,12 +1,16 @@
 import PropTypes from 'prop-types'
 import { useState } from 'react'
 import { useForm } from 'react-hook-form'
+import { Link } from "react-router-dom";
+import useVersion from '../../hooks/useVersion'
 import { CLOSURE_URL, INBOUND, OUTBOUND } from '../../lib/constants'
 import NavBar from '../../shared/NavBar'
 import Title from '../../shared/Title'
 import './ClosureControls.css'
 
 function ClosureControls({ setClosureResults }) {
+    const { version, isLoading: versionIsLoading, isError: versionIsError } = useVersion()
+
     const { register, handleSubmit } = useForm()
 
     const [startIncludes, setStartIncludes] = useState('//')
@@ -218,6 +222,7 @@ function ClosureControls({ setClosureResults }) {
                         </span>
                     </fieldset>
                 </div>
+                {(!versionIsLoading && !versionIsError) && <div className="footnote">Use Perl regular expressions, <Link to={version.implementation.url + 'Manual.html#PerlRegularExpressions'}>see the manual</Link>.</div>}
 
                 <span className="submit">
                     <button type="submit" className="closure-controls-submit">Run Closure</button>
