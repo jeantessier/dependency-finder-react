@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types'
 import { useState } from 'react'
 import { useForm } from 'react-hook-form'
-import { Link } from "react-router-dom";
+import { Link, useSearchParams } from "react-router-dom";
 import useVersion from '../../hooks/useVersion'
 import { CLOSURE_URL, INBOUND, OUTBOUND } from '../../lib/constants'
 import NavBar from '../../shared/NavBar'
@@ -13,42 +13,52 @@ function ClosureControls({ setClosureResults }) {
 
     const { register, handleSubmit } = useForm()
 
-    const [startIncludes, setStartIncludes] = useState('//')
+    const [searchParams, setSearchParams] = useSearchParams()
+
+    const getStringParams = (name, defaultValue) => {
+        if (searchParams.has(name)) {
+            return searchParams.get(name)
+        } else {
+            return defaultValue
+        }
+    }
+
+    const [startIncludes, setStartIncludes] = useState(getStringParams('startIncludes', '//'))
     const handleStartIncludes = e => {
         setStartIncludes(e.target.value)
     }
 
-    const [startExcludes, setStartExcludes] = useState('')
+    const [startExcludes, setStartExcludes] = useState(getStringParams('startExcludes', ''))
     const handleStartExcludes = e => {
         setStartExcludes(e.target.value)
     }
 
-    const [stopIncludes, setStopIncludes] = useState('')
+    const [stopIncludes, setStopIncludes] = useState(getStringParams('stopIncludes', ''))
     const handleStopIncludes = e => {
         setStopIncludes(e.target.value)
     }
 
-    const [stopExcludes, setStopExcludes] = useState('')
+    const [stopExcludes, setStopExcludes] = useState(getStringParams('stopExcludes', ''))
     const handleStopExcludes = e => {
         setStopExcludes(e.target.value)
     }
 
-    const [maximumInboundDepth, setMaximumInboundDepth] = useState('0')
+    const [maximumInboundDepth, setMaximumInboundDepth] = useState(getStringParams('maximumInboundDepth', '0'))
     const handleMaximumInboundDepth = e => {
         setMaximumInboundDepth(e.target.value)
     }
 
-    const [maximumOutboundDepth, setMaximumOutboundDepth] = useState('')
+    const [maximumOutboundDepth, setMaximumOutboundDepth] = useState(getStringParams('maximumOutboundDepth', ''))
     const handleMaximumOutboundDepth = e => {
         setMaximumOutboundDepth(e.target.value)
     }
 
-    const [scope, setScope] = useState('feature')
+    const [scope, setScope] = useState(getStringParams('scope', 'feature'))
     const handleScope = e => {
         setScope(e.target.value)
     }
 
-    const [filter, setFilter] = useState('feature')
+    const [filter, setFilter] = useState(getStringParams('filter', 'feature'))
     const handleFilter = e => {
         setFilter(e.target.value)
     }
@@ -64,6 +74,7 @@ function ClosureControls({ setClosureResults }) {
         fetch(request)
             .then(response => response.json())
             .then(json => setClosureResults(json))
+        setSearchParams(data)
     }
 
     return (

@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types'
 import { useState } from 'react'
 import { useForm } from 'react-hook-form'
-import { Link } from "react-router-dom";
+import { Link, useSearchParams } from "react-router-dom";
 import useVersion from '../../hooks/useVersion'
 import { METRICS_URL } from '../../lib/constants'
 import NavBar from '../../shared/NavBar'
@@ -13,67 +13,85 @@ function MetricsControls({ setMetricsResults }) {
 
     const { register, handleSubmit } = useForm()
 
-    const [scopeIncludes, setScopeIncludes] = useState('//')
+    const [searchParams, setSearchParams] = useSearchParams()
+
+    const getStringParams = (name, defaultValue) => {
+        if (searchParams.has(name)) {
+            return searchParams.get(name)
+        } else {
+            return defaultValue
+        }
+    }
+
+    const getBooleanParams = (name, defaultValue) => {
+        if (searchParams.has(name)) {
+            return searchParams.get(name) === 'true'
+        } else {
+            return defaultValue
+        }
+    }
+
+    const [scopeIncludes, setScopeIncludes] = useState(getStringParams('scopeIncludes', '//'))
     const handleScopeIncludes = e => {
         setScopeIncludes(e.target.value)
     }
 
-    const [scopeExcludes, setScopeExcludes] = useState('')
+    const [scopeExcludes, setScopeExcludes] = useState(getStringParams('scopeExcludes', ''))
     const handleScopeExcludes = e => {
         setScopeExcludes(e.target.value)
     }
 
-    const [packageScope, setPackageScope] = useState(true)
+    const [packageScope, setPackageScope] = useState(getBooleanParams('packageScope', true))
     const handlePackageScope = () => {
         setPackageScope(!packageScope)
     }
 
-    const [classScope, setClassScope] = useState(true)
+    const [classScope, setClassScope] = useState(getBooleanParams('classScope', true))
     const handleClassScope = () => {
         setClassScope(!classScope)
     }
 
-    const [featureScope, setFeatureScope] = useState(true)
+    const [featureScope, setFeatureScope] = useState(getBooleanParams('featureScope', true))
     const handleFeatureScope = () => {
         setFeatureScope(!featureScope)
     }
 
-    const [filterIncludes, setFilterIncludes] = useState('//')
+    const [filterIncludes, setFilterIncludes] = useState(getStringParams('filterIncludes', '//'))
     const handleFilterIncludes = e => {
         setFilterIncludes(e.target.value)
     }
 
-    const [filterExcludes, setFilterExcludes] = useState('')
+    const [filterExcludes, setFilterExcludes] = useState(getStringParams('filterExcludes', ''))
     const handleFilterExcludes = e => {
         setFilterExcludes(e.target.value)
     }
 
-    const [packageFilter, setPackageFilter] = useState(true)
+    const [packageFilter, setPackageFilter] = useState(getBooleanParams('packageFilter', true))
     const handlePackageFilter = () => {
         setPackageFilter(!packageFilter)
     }
 
-    const [classFilter, setClassFilter] = useState(true)
+    const [classFilter, setClassFilter] = useState(getBooleanParams('classFilter', true))
     const handleClassFilter = () => {
         setClassFilter(!classFilter)
     }
 
-    const [featureFilter, setFeatureFilter] = useState(true)
+    const [featureFilter, setFeatureFilter] = useState(getBooleanParams('featureFilter', true))
     const handleFeatureFilter = () => {
         setFeatureFilter(!featureFilter)
     }
 
-    const [listElements, setListElements] = useState(false)
+    const [listElements, setListElements] = useState(getBooleanParams('listElements', false))
     const handleListElements = () => {
         setListElements(!listElements)
     }
 
-    const [chart, setChart] = useState(false)
+    const [chart, setChart] = useState(getBooleanParams('chart', false))
     const handleChart = () => {
         setChart(!chart)
     }
 
-    const [histograms, setHistograms] = useState(false)
+    const [histograms, setHistograms] = useState(getBooleanParams('histograms', false))
     const handleHistograms = () => {
         setHistograms(!histograms)
     }
@@ -89,6 +107,7 @@ function MetricsControls({ setMetricsResults }) {
         fetch(request)
             .then(response => response.json())
             .then(json => setMetricsResults(json))
+        setSearchParams(data)
     }
 
     return (

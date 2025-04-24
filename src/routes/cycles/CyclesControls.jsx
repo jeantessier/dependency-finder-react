@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types'
 import { useState } from 'react'
 import { useForm } from 'react-hook-form'
-import { Link } from "react-router-dom";
+import { Link, useSearchParams } from "react-router-dom";
 import useVersion from '../../hooks/useVersion'
 import { CYCLES_URL } from '../../lib/constants'
 import NavBar from '../../shared/NavBar'
@@ -13,32 +13,50 @@ function CyclesControls({ setCyclesResults }) {
 
     const { register, handleSubmit } = useForm()
 
-    const [scopeIncludes, setScopeIncludes] = useState('//')
+    const [searchParams, setSearchParams] = useSearchParams()
+
+    const getStringParams = (name, defaultValue) => {
+        if (searchParams.has(name)) {
+            return searchParams.get(name)
+        } else {
+            return defaultValue
+        }
+    }
+
+    const getBooleanParams = (name, defaultValue) => {
+        if (searchParams.has(name)) {
+            return searchParams.get(name) === 'true'
+        } else {
+            return defaultValue
+        }
+    }
+
+    const [scopeIncludes, setScopeIncludes] = useState(getStringParams('scopeIncludes', '//'))
     const handleScopeIncludes = e => {
         setScopeIncludes(e.target.value)
     }
 
-    const [scopeExcludes, setScopeExcludes] = useState('')
+    const [scopeExcludes, setScopeExcludes] = useState(getStringParams('scopeExcludes', ''))
     const handleScopeExcludes = e => {
         setScopeExcludes(e.target.value)
     }
 
-    const [packageScope, setPackageScope] = useState(true)
+    const [packageScope, setPackageScope] = useState(getBooleanParams('packageScope', true))
     const handlePackageScope = () => {
         setPackageScope(!packageScope)
     }
 
-    const [classScope, setClassScope] = useState(false)
+    const [classScope, setClassScope] = useState(getBooleanParams('classScope', false))
     const handleClassScope = () => {
         setClassScope(!classScope)
     }
 
-    const [featureScope, setFeatureScope] = useState(false)
+    const [featureScope, setFeatureScope] = useState(getBooleanParams('featureScope', false))
     const handleFeatureScope = () => {
         setFeatureScope(!featureScope)
     }
 
-    const [maximumCycleLength, setMaximumCycleLength] = useState('')
+    const [maximumCycleLength, setMaximumCycleLength] = useState(getStringParams('maximumCycleLength', ''))
     const handleMaximumCycleLength = e => {
         setMaximumCycleLength(e.target.value)
     }
@@ -54,6 +72,7 @@ function CyclesControls({ setCyclesResults }) {
         fetch(request)
             .then(response => response.json())
             .then(json => setCyclesResults(json))
+        setSearchParams(data)
     }
 
     return (

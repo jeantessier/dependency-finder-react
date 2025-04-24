@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types'
 import { useState } from 'react'
 import { useForm } from 'react-hook-form'
-import { Link } from 'react-router-dom'
+import { Link, useSearchParams } from 'react-router-dom'
 import useVersion from '../../hooks/useVersion'
 import { QUERY_URL, INBOUND, OUTBOUND } from '../../lib/constants'
 import NavBar from '../../shared/NavBar'
@@ -13,67 +13,85 @@ function QueryControls({ setQueryResults }) {
 
     const { register, handleSubmit } = useForm()
 
-    const [scopeIncludes, setScopeIncludes] = useState('//')
+    const [searchParams, setSearchParams] = useSearchParams()
+
+    const getStringParams = (name, defaultValue) => {
+        if (searchParams.has(name)) {
+            return searchParams.get(name)
+        } else {
+            return defaultValue
+        }
+    }
+
+    const getBooleanParams = (name, defaultValue) => {
+        if (searchParams.has(name)) {
+            return searchParams.get(name) === 'true'
+        } else {
+            return defaultValue
+        }
+    }
+
+    const [scopeIncludes, setScopeIncludes] = useState(getStringParams('scopeIncludes', '//'))
     const handleScopeIncludes = e => {
         setScopeIncludes(e.target.value)
     }
 
-    const [scopeExcludes, setScopeExcludes] = useState('')
+    const [scopeExcludes, setScopeExcludes] = useState(getStringParams('scopeExcludes', ''))
     const handleScopeExcludes = e => {
         setScopeExcludes(e.target.value)
     }
 
-    const [packageScope, setPackageScope] = useState(true)
+    const [packageScope, setPackageScope] = useState(getBooleanParams('packageScope', true))
     const handlePackageScope = () => {
         setPackageScope(!packageScope)
     }
 
-    const [classScope, setClassScope] = useState(false)
+    const [classScope, setClassScope] = useState(getBooleanParams('classScope', false))
     const handleClassScope = () => {
         setClassScope(!classScope)
     }
 
-    const [featureScope, setFeatureScope] = useState(false)
+    const [featureScope, setFeatureScope] = useState(getBooleanParams('featureScope', false))
     const handleFeatureScope = () => {
         setFeatureScope(!featureScope)
     }
 
-    const [filterIncludes, setFilterIncludes] = useState('//')
+    const [filterIncludes, setFilterIncludes] = useState(getStringParams('filterIncludes', '//'))
     const handleFilterIncludes = e => {
         setFilterIncludes(e.target.value)
     }
 
-    const [filterExcludes, setFilterExcludes] = useState('')
+    const [filterExcludes, setFilterExcludes] = useState(getStringParams('filterExcludes', ''))
     const handleFilterExcludes = e => {
         setFilterExcludes(e.target.value)
     }
 
-    const [packageFilter, setPackageFilter] = useState(true)
+    const [packageFilter, setPackageFilter] = useState(getBooleanParams('packageFilter', true))
     const handlePackageFilter = () => {
         setPackageFilter(!packageFilter)
     }
 
-    const [classFilter, setClassFilter] = useState(false)
+    const [classFilter, setClassFilter] = useState(getBooleanParams('classFilter', false))
     const handleClassFilter = () => {
         setClassFilter(!classFilter)
     }
 
-    const [featureFilter, setFeatureFilter] = useState(false)
+    const [featureFilter, setFeatureFilter] = useState(getBooleanParams('featureFilter', false))
     const handleFeatureFilter = () => {
         setFeatureFilter(!featureFilter)
     }
 
-    const [showInbounds, setShowInbounds] = useState(true)
+    const [showInbounds, setShowInbounds] = useState(getBooleanParams('showInbounds', true))
     const handleShowInbounds = () => {
         setShowInbounds(!showInbounds)
     }
 
-    const [showOutbounds, setShowOutbounds] = useState(true)
+    const [showOutbounds, setShowOutbounds] = useState(getBooleanParams('showOutbounds', true))
     const handleShowOutbounds = () => {
         setShowOutbounds(!showOutbounds)
     }
 
-    const [showShowEmptyNodes, setShowEmptyNodes] = useState(true)
+    const [showShowEmptyNodes, setShowEmptyNodes] = useState(getBooleanParams('showShowEmptyNodes', true))
     const handleShowEmptyNodes = () => {
         setShowEmptyNodes(!showShowEmptyNodes)
     }
@@ -89,6 +107,7 @@ function QueryControls({ setQueryResults }) {
         fetch(request)
             .then(response => response.json())
             .then(json => setQueryResults(json))
+        setSearchParams(data)
     }
 
     return (
