@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { useForm } from 'react-hook-form'
 import { Link, useSearchParams } from 'react-router-dom'
 import useVersion from '../../hooks/useVersion'
@@ -91,9 +91,9 @@ function QueryControls({ setQueryResults }) {
         setShowOutbounds(!showOutbounds)
     }
 
-    const [showShowEmptyNodes, setShowEmptyNodes] = useState(getBooleanParams('showShowEmptyNodes', true))
+    const [showEmptyNodes, setShowEmptyNodes] = useState(getBooleanParams('showEmptyNodes', true))
     const handleShowEmptyNodes = () => {
-        setShowEmptyNodes(!showShowEmptyNodes)
+        setShowEmptyNodes(!showEmptyNodes)
     }
 
     const onSubmit = (data) => {
@@ -109,6 +109,41 @@ function QueryControls({ setQueryResults }) {
             .then(json => setQueryResults(json))
         setSearchParams(data)
     }
+
+    useEffect(
+        () => {
+            onSubmit({
+                scopeIncludes,
+                scopeExcludes,
+                packageScope,
+                classScope,
+                featureScope,
+                filterIncludes,
+                filterExcludes,
+                packageFilter,
+                classFilter,
+                featureFilter,
+                showInbounds,
+                showOutbounds,
+                showEmptyNodes,
+            })
+        },
+        [
+            // scopeIncludes,
+            // scopeExcludes,
+            packageScope,
+            classScope,
+            featureScope,
+            // filterIncludes,
+            // filterExcludes,
+            packageFilter,
+            classFilter,
+            featureFilter,
+            showInbounds,
+            showOutbounds,
+            showEmptyNodes,
+        ],
+    )
 
     return (
         <div className="query-controls">
@@ -252,7 +287,7 @@ function QueryControls({ setQueryResults }) {
                                 <input {...register("showEmptyNodes")}
                                        type="checkbox"
                                        name="showEmptyNodes" id="showEmptyNodes"
-                                       checked={showShowEmptyNodes}
+                                       checked={showEmptyNodes}
                                        onChange={handleShowEmptyNodes}/> empty nodes
                             </label>
                         </span>
