@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { useForm } from 'react-hook-form'
 import { Link, useSearchParams } from "react-router-dom";
 import useVersion from '../../hooks/useVersion'
@@ -76,6 +76,31 @@ function ClosureControls({ setClosureResults }) {
             .then(json => setClosureResults(json))
         setSearchParams(data)
     }
+
+    useEffect(
+        () => {
+            onSubmit({
+                startIncludes,
+                startExcludes,
+                stopIncludes,
+                stopExcludes,
+                maximumInboundDepth,
+                maximumOutboundDepth,
+                scope,
+                filter,
+            })
+        },
+        [
+            // startIncludes,
+            // startExcludes,
+            // stopIncludes,
+            // stopExcludes,
+            maximumInboundDepth,
+            maximumOutboundDepth,
+            scope,
+            filter,
+        ],
+)
 
     return (
         <div className="closure-controls">
