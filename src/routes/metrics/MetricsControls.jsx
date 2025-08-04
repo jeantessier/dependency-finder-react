@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { useForm } from 'react-hook-form'
 import { Link, useSearchParams } from "react-router-dom";
 import useVersion from '../../hooks/useVersion'
@@ -95,6 +95,41 @@ function MetricsControls({ setMetricsResults }) {
     const handleHistograms = () => {
         setHistograms(!histograms)
     }
+
+    useEffect(
+        () => {
+            onSubmit({
+                scopeIncludes,
+                scopeExcludes,
+                packageScope,
+                classScope,
+                featureScope,
+                filterIncludes,
+                filterExcludes,
+                packageFilter,
+                classFilter,
+                featureFilter,
+                listElements,
+                chart,
+                histograms,
+            })
+        },
+        [
+            // scopeIncludes,
+            // scopeExcludes,
+            packageScope,
+            classScope,
+            featureScope,
+            // filterIncludes,
+            // filterExcludes,
+            packageFilter,
+            classFilter,
+            featureFilter,
+            listElements,
+            chart,
+            histograms,
+        ],
+    )
 
     const onSubmit = (data) => {
         const request = new Request(METRICS_URL, {
