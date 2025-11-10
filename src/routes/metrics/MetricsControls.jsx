@@ -96,6 +96,20 @@ function MetricsControls({ setMetricsResults }) {
         setHistograms(!histograms)
     }
 
+    const onSubmit = data => {
+        const request = new Request(METRICS_URL, {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify(data),
+        })
+        fetch(request)
+            .then(response => response.json())
+            .then(json => setMetricsResults(json))
+        setSearchParams(data)
+    }
+
     useEffect(
         () => {
             onSubmit({
@@ -130,20 +144,6 @@ function MetricsControls({ setMetricsResults }) {
             histograms,
         ],
     )
-
-    const onSubmit = (data) => {
-        const request = new Request(METRICS_URL, {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json",
-            },
-            body: JSON.stringify(data),
-        })
-        fetch(request)
-            .then(response => response.json())
-            .then(json => setMetricsResults(json))
-        setSearchParams(data)
-    }
 
     return (
         <div className="metrics-controls">

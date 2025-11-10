@@ -96,7 +96,7 @@ function QueryControls({ setQueryResults }) {
         setShowEmptyNodes(!showEmptyNodes)
     }
 
-    const onSubmit = (data) => {
+    const onSubmit = data => {
         const request = new Request(QUERY_URL, {
             method: "POST",
             headers: {

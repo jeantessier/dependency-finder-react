@@ -63,7 +63,7 @@ function ClosureControls({ setClosureResults }) {
         setFilter(e.target.value)
     }
 
-    const onSubmit = (data) => {
+    const onSubmit = data => {
         const request = new Request(CLOSURE_URL, {
             method: "POST",
             headers: {
