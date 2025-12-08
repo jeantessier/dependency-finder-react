@@ -127,6 +127,7 @@ const QueryControls = ({ setQueryResults }) => {
                 showEmptyNodes,
             })
         },
+        // eslint-disable-next-line react-hooks/exhaustive-deps
         [
             // scopeIncludes,
             // scopeExcludes,

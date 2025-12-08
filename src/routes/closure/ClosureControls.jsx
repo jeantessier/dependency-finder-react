@@ -89,6 +89,7 @@ const ClosureControls = ({ setClosureResults }) => {
                 filter,
             })
         },
+        // eslint-disable-next-line react-hooks/exhaustive-deps
         [
             // startIncludes,
             // startExcludes,
