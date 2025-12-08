@@ -163,10 +163,6 @@ const ClosureControls = ({ form, handleTextChange, setClosureResults }) => {
                 </fieldset>
             </div>
             {(!versionIsLoading && !versionIsError) && <div className="footnote">Use Perl regular expressions, <Link to={version.implementation.url + 'Manual.html#PerlRegularExpressions'}>see the manual</Link>.</div>}
-
-            <span className="submit">
-                <button type="submit" className="closure-controls-submit">Run Closure</button>
-            </span>
         </div>
     )
 }
