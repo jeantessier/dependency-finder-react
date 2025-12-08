@@ -4,13 +4,10 @@ legend {
 }
 
 .query-controls {
-    margin-bottom: 2rem;
-    width: fit-content;
-}
-
-.query-controls {
     display: grid;
     grid-template-columns: 1fr 1fr;
+    margin-bottom: 2rem;
+    width: fit-content;
 }
 
 .title {

@@ -5,20 +5,21 @@ import Histograms from './Histograms'
 import ProgrammingElementResults from './ProgrammingElementResults'
 import './MetricsResults.css'
 
-const MetricsResults = ({ metricsResults }) => {
+const MetricsResults = ({ metricsResults, onNameClick }) => {
     return (
         metricsResults &&
             <div className="metrics-results">
-                <ProgrammingElementResults metricsResults={metricsResults}/>
-                <DependencyResults metricsResults={metricsResults}/>
-                <Chart chart={metricsResults.chart}/>
-                <Histograms histograms={metricsResults.histograms}/>
+                <ProgrammingElementResults metricsResults={metricsResults} onNameClick={onNameClick} />
+                <DependencyResults metricsResults={metricsResults} />
+                <Chart chart={metricsResults.chart} />
+                <Histograms histograms={metricsResults.histograms} />
             </div>
     )
 }
 
 MetricsResults.propTypes = {
     metricsResults: PropTypes.array.isRequired,
+    onNameClick: PropTypes.func.isRequired,
 }
 
 export default MetricsResults

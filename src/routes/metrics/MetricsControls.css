@@ -4,13 +4,10 @@ legend {
 }
 
 .metrics-controls {
-    margin-bottom: 2rem;
-    width: fit-content;
-}
-
-.metrics-controls form {
     display: grid;
     grid-template-columns: 1fr 1fr;
+    margin-bottom: 2rem;
+    width: fit-content;
 }
 
 .title {

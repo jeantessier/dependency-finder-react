@@ -4,13 +4,10 @@ legend {
 }
 
 .closure-controls {
-    margin-bottom: 2rem;
-    width: fit-content;
-}
-
-.closure-controls {
     display: grid;
     grid-template-columns: 1fr 1fr;
+    margin-bottom: 2rem;
+    width: fit-content;
 }
 
 .title {
