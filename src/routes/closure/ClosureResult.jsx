@@ -1,9 +1,9 @@
 import PropTypes from 'prop-types'
+import { Dependencies } from '../../shared'
 import ClosureResults from './ClosureResults'
-import Dependencies from '../../shared/Dependencies'
 import './ClosureResult.css'
 
-function ClosureResult({ closureResult }) {
+const ClosureResult = ({ closureResult }) => {
     return (
         <div className={`closure-result ${closureResult.type}`}>
             <div className={closureResult.confirmed ? 'scope name' : 'scope name inferred'}>{closureResult.name}{!closureResult.confirmed && ' *'}</div>

@@ -1,3 +1,1 @@
-import Metrics from './Metrics'
-
-export default Metrics
+export { default as Metrics } from './Metrics'

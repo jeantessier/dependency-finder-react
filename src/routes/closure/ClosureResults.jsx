@@ -2,7 +2,7 @@ import PropTypes from 'prop-types'
 import ClosureResult from './ClosureResult'
 import './ClosureResults.css'
 
-function ClosureResults({ closureResults, type }) {
+const ClosureResults = ({ closureResults, type }) => {
     return (
         <div className={`closure-results ${type}`}>
             {closureResults.map(result =>

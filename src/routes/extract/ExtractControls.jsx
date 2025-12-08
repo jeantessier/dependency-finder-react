@@ -1,10 +1,10 @@
 import { useState } from 'react'
 import { useForm } from 'react-hook-form'
-import useStats from '../../hooks/useStats'
-import { EXTRACT_URL } from '../../lib/constants'
+import { useStats } from '../../hooks'
+import { EXTRACT_URL } from '../../lib'
 import './ExtractControls.css'
 
-export default function ExtractControls() {
+const ExtractControls = () => {
     const { register, handleSubmit } = useForm()
 
     const [update, setUpdate] = useState(true)
@@ -47,3 +47,5 @@ export default function ExtractControls() {
         </div>
     )
 }
+
+export default ExtractControls

@@ -2,7 +2,7 @@ import PropTypes from 'prop-types'
 import Name from './Name'
 import './Dependency.css'
 
-function Dependency({ direction, type, name, confirmed, onNameClick }) {
+const Dependency = ({ direction, type, name, confirmed, onNameClick }) => {
     return (
         <div className={confirmed ? `dependency ${type}` : `dependency ${type} inferred`}>{direction} <Name name={name} onNameClick={onNameClick} />{!confirmed && ' *'}</div>
     )

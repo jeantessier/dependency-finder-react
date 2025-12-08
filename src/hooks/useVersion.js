@@ -1,8 +1,7 @@
 import useSWR from 'swr'
-import { VERSION_URL } from '../lib/constants'
-import { fetcher } from '../lib/fetcher'
+import { fetcher, VERSION_URL } from '../lib'
 
-export default function useVersion() {
+export const useVersion = () => {
     const { data, error, isLoading } = useSWR(VERSION_URL, fetcher, { revalidateOnFocus: false })
 
     return {

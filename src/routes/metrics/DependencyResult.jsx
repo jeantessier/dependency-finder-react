@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types'
 import './DependencyResult.css'
 
-function DependencyResult({ direction, toFrom, dependencyResult }) {
+const DependencyResult = ({ direction, toFrom, dependencyResult }) => {
     return (
         <div className="dependency-result">
             <div>

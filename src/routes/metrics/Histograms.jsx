@@ -2,7 +2,7 @@ import PropTypes from 'prop-types'
 import Histogram from './Histogram'
 import './Histograms.css'
 
-function Histograms({ histograms }) {
+const Histograms = ({ histograms }) => {
     return (
         histograms &&
             <div className="histograms">

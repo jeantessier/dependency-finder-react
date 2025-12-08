@@ -1,3 +1,1 @@
-import Cycles from './Cycles'
-
-export default Cycles
+export { default as Cycles } from './Cycles'

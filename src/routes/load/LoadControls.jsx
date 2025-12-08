@@ -1,9 +1,9 @@
 import { useForm } from 'react-hook-form'
-import useStats from '../../hooks/useStats'
-import { LOAD_URL } from '../../lib/constants'
+import { useStats } from '../../hooks'
+import { LOAD_URL } from '../../lib'
 import './LoadControls.css'
 
-export default function LoadControls() {
+const LoadControls = () => {
     const { register, handleSubmit } = useForm()
 
     const { stats, mutate } = useStats()
@@ -32,3 +32,5 @@ export default function LoadControls() {
         </div>
     )
 }
+
+export default LoadControls

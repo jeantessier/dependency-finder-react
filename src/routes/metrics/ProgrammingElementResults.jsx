@@ -1,8 +1,8 @@
 import PropTypes from 'prop-types'
-import ProgrammingElementResult from "./ProgrammingElementResult.jsx";
+import ProgrammingElementResult from './ProgrammingElementResult'
 import './ProgrammingElementResults.css'
 
-function ProgrammingElementResults({ metricsResults }) {
+const ProgrammingElementResults = ({ metricsResults }) => {
     return (
         <div className="programming-element-results">
             <ProgrammingElementResult type="package" label="package(s)" programmingElementResult={metricsResults.packages} />

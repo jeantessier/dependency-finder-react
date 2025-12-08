@@ -2,7 +2,7 @@ import PropTypes from 'prop-types'
 import ReactECharts from 'echarts-for-react'
 import './Chart.css'
 
-function Chart({ chart }) {
+const Chart = ({ chart }) => {
     if (!chart) {
         return (
             <></>

@@ -2,13 +2,12 @@ import PropTypes from 'prop-types'
 import { useEffect, useState } from 'react'
 import { useForm } from 'react-hook-form'
 import { Link, useSearchParams } from 'react-router-dom'
-import useVersion from '../../hooks/useVersion'
-import { QUERY_URL, INBOUND, OUTBOUND } from '../../lib/constants'
-import NavBar from '../../shared/NavBar'
-import Title from '../../shared/Title'
+import { useVersion } from '../../hooks'
+import { QUERY_URL, INBOUND, OUTBOUND } from '../../lib'
+import { NavBar, Title } from '../../shared'
 import './QueryControls.css'
 
-function QueryControls({ setQueryResults }) {
+const QueryControls = ({ setQueryResults }) => {
     const { version, isLoading: versionIsLoading, isError: versionIsError } = useVersion()
 
     const { register, handleSubmit } = useForm()

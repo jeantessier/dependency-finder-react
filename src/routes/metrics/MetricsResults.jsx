@@ -5,7 +5,7 @@ import Histograms from './Histograms'
 import ProgrammingElementResults from './ProgrammingElementResults'
 import './MetricsResults.css'
 
-function MetricsResults({ metricsResults }) {
+const MetricsResults = ({ metricsResults }) => {
     return (
         metricsResults &&
             <div className="metrics-results">

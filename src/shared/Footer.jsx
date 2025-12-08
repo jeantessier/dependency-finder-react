@@ -1,9 +1,8 @@
 import { Link } from 'react-router-dom'
-import useStats from '../hooks/useStats'
-import useVersion from '../hooks/useVersion'
+import { useStats, useVersion } from '../hooks'
 import './Footer.css'
 
-function Footer() {
+const Footer = () => {
     const { stats, isLoading: statsIsLoading, isError: statsIsError } = useStats()
     const { version, isLoading: versionIsLoading, isError: versionIsError } = useVersion()
 

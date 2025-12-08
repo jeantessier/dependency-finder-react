@@ -1,12 +1,10 @@
+import { useTitle } from '../../hooks'
+import { NavBar, Stats, Title } from '../../shared'
 import ExtractMetadata from './ExtractMetadata'
 import ExtractControls from './ExtractControls'
-import NavBar from '../../shared/NavBar'
-import Stats from '../../shared/Stats'
-import Title from '../../shared/Title'
-import useTitle from '../../hooks/useTitle'
 import './Extract.css'
 
-export default function Extract() {
+const Extract = () => {
     useTitle('Extract')
 
     return (
@@ -19,3 +17,5 @@ export default function Extract() {
         </>
     )
 }
+
+export default Extract

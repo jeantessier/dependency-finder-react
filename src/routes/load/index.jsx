@@ -1,3 +1,1 @@
-import Load from './Load'
-
-export default Load
+export { default as Load } from './Load'

@@ -1,12 +1,10 @@
+import { useTitle } from '../../hooks'
+import { NavBar, Stats, Title } from '../../shared'
 import LoadMetadata from './LoadMetadata'
 import LoadControls from './LoadControls'
-import NavBar from '../../shared/NavBar'
-import Stats from '../../shared/Stats'
-import Title from '../../shared/Title'
-import useTitle from '../../hooks/useTitle'
 import './Load.css'
 
-export default function Load() {
+const Load = () => {
     useTitle('Load')
 
     return (
@@ -19,3 +17,5 @@ export default function Load() {
         </>
     )
 }
+
+export default Load

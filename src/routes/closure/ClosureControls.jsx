@@ -1,14 +1,13 @@
 import PropTypes from 'prop-types'
 import { useEffect, useState } from 'react'
 import { useForm } from 'react-hook-form'
-import { Link, useSearchParams } from "react-router-dom";
-import useVersion from '../../hooks/useVersion'
-import { CLOSURE_URL, INBOUND, OUTBOUND } from '../../lib/constants'
-import NavBar from '../../shared/NavBar'
-import Title from '../../shared/Title'
+import { Link, useSearchParams } from 'react-router-dom'
+import { useVersion } from '../../hooks'
+import { CLOSURE_URL, INBOUND, OUTBOUND } from '../../lib'
+import { NavBar, Title } from '../../shared'
 import './ClosureControls.css'
 
-function ClosureControls({ setClosureResults }) {
+const ClosureControls = ({ setClosureResults }) => {
     const { version, isLoading: versionIsLoading, isError: versionIsError } = useVersion()
 
     const { register, handleSubmit } = useForm()

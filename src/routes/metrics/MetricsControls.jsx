@@ -1,14 +1,13 @@
 import PropTypes from 'prop-types'
 import { useEffect, useState } from 'react'
 import { useForm } from 'react-hook-form'
-import { Link, useSearchParams } from "react-router-dom";
-import useVersion from '../../hooks/useVersion'
-import { METRICS_URL } from '../../lib/constants'
-import NavBar from '../../shared/NavBar'
-import Title from '../../shared/Title'
+import { Link, useSearchParams } from 'react-router-dom'
+import { useVersion } from '../../hooks'
+import { METRICS_URL } from '../../lib'
+import { NavBar, Title } from '../../shared'
 import './MetricsControls.css'
 
-function MetricsControls({ setMetricsResults }) {
+const MetricsControls = ({ setMetricsResults }) => {
     const { version, isLoading: versionIsLoading, isError: versionIsError } = useVersion()
 
     const { register, handleSubmit } = useForm()

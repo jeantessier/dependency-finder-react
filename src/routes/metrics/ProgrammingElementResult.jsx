@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types'
 import './ProgrammingElementResult.css'
 
-function ProgrammingElementResult({ type, label, programmingElementResult }) {
+const ProgrammingElementResult = ({ type, label, programmingElementResult }) => {
     return (
         <div className={'programming-element-result ' + type}>
             <span>{programmingElementResult.count} {label}</span>

@@ -1,8 +1,8 @@
 import PropTypes from 'prop-types'
-import { OUTBOUND } from '../../lib/constants'
+import { OUTBOUND } from '../../lib'
 import './CycleNode.css'
 
-function CycleNode({ cycleNode }) {
+const CycleNode = ({ cycleNode }) => {
     return (
         <div className="cycle-node">
             <span className="marker">{OUTBOUND}</span>

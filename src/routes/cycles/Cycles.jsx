@@ -1,11 +1,11 @@
 import { useState } from 'react'
-import Footer from '../../shared/Footer'
-import useTitle from '../../hooks/useTitle'
+import { Footer } from '../../shared'
+import { useTitle } from '../../hooks'
 import CyclesControls from './CyclesControls'
 import CyclesResults from './CyclesResults'
 import './Cycles.css'
 
-export default function Cycles() {
+const Cycles = () => {
     useTitle('Cycles')
 
     const [cyclesResults, setCyclesResults] = useState([])
@@ -18,3 +18,5 @@ export default function Cycles() {
         </>
     )
 }
+
+export default Cycles

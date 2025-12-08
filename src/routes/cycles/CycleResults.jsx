@@ -2,7 +2,7 @@ import PropTypes from 'prop-types'
 import CycleNode from './CycleNode'
 import './CycleResults.css'
 
-function CyclesResult({ cycleResults }) {
+const CyclesResult = ({ cycleResults }) => {
     return (
         <div className={`cycle-results`}>
             {cycleResults.map(cycleNode =>

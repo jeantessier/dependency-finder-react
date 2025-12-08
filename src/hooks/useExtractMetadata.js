@@ -1,8 +1,7 @@
 import useSWR from 'swr'
-import { EXTRACT_URL } from '../lib/constants'
-import { fetcher } from '../lib/fetcher'
+import { EXTRACT_URL, fetcher } from '../lib'
 
-export default function useExtractMetadata() {
+export const useExtractMetadata = () => {
     const { data, error, isLoading } = useSWR(EXTRACT_URL, fetcher, { revalidateOnFocus: false })
 
     return {

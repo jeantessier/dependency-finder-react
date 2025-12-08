@@ -1,3 +1,1 @@
-import Query from './Query'
-
-export default Query
+export { default as Query } from './Query'

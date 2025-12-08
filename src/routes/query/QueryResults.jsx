@@ -2,7 +2,7 @@ import PropTypes from 'prop-types'
 import QueryResult from './QueryResult'
 import './QueryResults.css'
 
-function QueryResults({ queryResults, type, onNameClick }) {
+const QueryResults = ({ queryResults, type, onNameClick }) => {
     return (
         <div className={`query-results ${type}`}>
             {queryResults.map(result => (

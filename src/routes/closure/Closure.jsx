@@ -1,11 +1,11 @@
 import { useState } from 'react'
-import Footer from '../../shared/Footer'
-import useTitle from '../../hooks/useTitle'
+import { useTitle } from '../../hooks'
+import { Footer } from '../../shared'
 import ClosureControls from './ClosureControls'
 import ClosureResults from './ClosureResults'
 import './Closure.css'
 
-export default function Closure() {
+const Closure = () => {
     useTitle('Closure')
 
     const [closureResults, setClosureResults] = useState([])
@@ -18,3 +18,5 @@ export default function Closure() {
         </>
     )
 }
+
+export default Closure

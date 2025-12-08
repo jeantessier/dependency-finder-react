@@ -1,8 +1,7 @@
 import useSWR from 'swr'
-import { STATS_URL } from '../lib/constants'
-import { fetcher } from '../lib/fetcher'
+import { fetcher, STATS_URL } from '../lib'
 
-export default function useStats() {
+export const useStats = () => {
     const { data, error, isLoading, mutate } = useSWR(STATS_URL, fetcher, { revalidateOnFocus: false })
 
     return {

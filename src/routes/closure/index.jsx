@@ -1,3 +1,1 @@
-import Closure from './Closure'
-
-export default Closure
+export { default as Closure } from './Closure'

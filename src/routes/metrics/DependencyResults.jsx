@@ -1,8 +1,8 @@
 import PropTypes from 'prop-types'
-import DependencyResult from "./DependencyResult.jsx";
+import DependencyResult from './DependencyResult'
 import './DependencyResults.css'
 
-function DependencyResults({ metricsResults }) {
+const DependencyResults = ({ metricsResults }) => {
     return (
         <div className="dependency-results">
             <DependencyResult direction="outbound" toFrom="to" dependencyResult={metricsResults.outbounds} />

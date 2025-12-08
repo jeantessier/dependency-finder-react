@@ -1,7 +1,7 @@
-import useStats from '../hooks/useStats'
+import { useStats } from '../hooks'
 import './Stats.css'
 
-function Stats() {
+const Stats = () => {
     const { stats, isLoading, isError } = useStats()
 
     if (isLoading) {

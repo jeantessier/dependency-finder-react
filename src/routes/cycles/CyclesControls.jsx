@@ -1,14 +1,13 @@
 import PropTypes from 'prop-types'
 import { useState } from 'react'
 import { useForm } from 'react-hook-form'
-import { Link, useSearchParams } from "react-router-dom";
-import useVersion from '../../hooks/useVersion'
-import { CYCLES_URL } from '../../lib/constants'
-import NavBar from '../../shared/NavBar'
-import Title from '../../shared/Title'
+import { Link, useSearchParams } from 'react-router-dom'
+import { useVersion } from '../../hooks'
+import { CYCLES_URL } from '../../lib'
+import { NavBar, Title } from '../../shared'
 import './CyclesControls.css'
 
-function CyclesControls({ setCyclesResults }) {
+const CyclesControls = ({ setCyclesResults }) => {
     const { version, isLoading: versionIsLoading, isError: versionIsError } = useVersion()
 
     const { register, handleSubmit } = useForm()

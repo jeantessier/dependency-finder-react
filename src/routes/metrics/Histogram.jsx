@@ -1,8 +1,8 @@
+import ReactECharts from 'echarts-for-react'
 import PropTypes from 'prop-types'
-import ReactECharts from "echarts-for-react";
 import './Histogram.css'
 
-function Histogram({ title, histogram }) {
+const Histogram = ({ title, histogram }) => {
     const chartOptions = {
         title: {
             text: title,

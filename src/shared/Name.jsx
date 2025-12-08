@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types'
 import './Name.css'
 
-function Name({ name, onNameClick }) {
+const Name = ({ name, onNameClick }) => {
     const handleClick = e => {
         if (onNameClick) {
             onNameClick(e.target.textContent)

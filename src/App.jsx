@@ -1,12 +1,11 @@
 import reactLogo from './assets/react.svg'
 import dependencyFinderLogo from '/dependency_finder_logo.png'
 import viteLogo from '/vite.svg'
-import useTitle from './hooks/useTitle'
-import NavBar from './shared/NavBar'
-import Title from './shared/Title'
+import { useTitle } from './hooks'
+import { NavBar, Title } from './shared'
 import './App.css'
 
-function App() {
+const App = () => {
   useTitle('Dependency Finder')
 
   return (

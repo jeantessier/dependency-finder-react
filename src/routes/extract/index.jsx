@@ -1,3 +1,1 @@
-import Extract from './Extract'
-
-export default Extract
+export { default as Extract } from './Extract'

@@ -1,7 +1,7 @@
-import useLoadMetadata from '../../hooks/useLoadMetadata'
+import { useLoadMetadata } from '../../hooks'
 import './LoadMetadata.css'
 
-export default function LoadMetadata() {
+const LoadMetadata = () => {
     const { metadata, isLoading, isError } = useLoadMetadata()
 
     if (isLoading) {
@@ -31,3 +31,5 @@ export default function LoadMetadata() {
         </div>
     )
 }
+
+export default LoadMetadata

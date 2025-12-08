@@ -1,11 +1,11 @@
 import { useState } from 'react'
-import Footer from '../../shared/Footer'
-import useTitle from '../../hooks/useTitle'
+import { useTitle } from '../../hooks'
+import { Footer } from '../../shared'
 import MetricsControls from './MetricsControls'
 import MetricsResults from './MetricsResults'
 import './Metrics.css'
 
-export default function Metrics() {
+const Metrics = () => {
     useTitle('Metrics')
 
     const [metricsResults, setMetricsResults] = useState(null)
@@ -18,3 +18,5 @@ export default function Metrics() {
         </>
     )
 }
+
+export default Metrics

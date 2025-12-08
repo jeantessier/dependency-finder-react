@@ -1,7 +1,7 @@
-import useExtractMetadata from '../../hooks/useExtractMetadata'
+import { useExtractMetadata } from '../../hooks'
 import './ExtractMetadata.css'
 
-export default function ExtractMetadata() {
+const ExtractMetadata = () => {
     const { metadata, isLoading, isError } = useExtractMetadata()
 
     if (isLoading) {
@@ -47,3 +47,5 @@ export default function ExtractMetadata() {
         </div>
     )
 }
+
+export default ExtractMetadata

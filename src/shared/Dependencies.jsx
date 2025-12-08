@@ -1,9 +1,9 @@
 import PropTypes from 'prop-types'
-import { INBOUND, OUTBOUND, BIDIRECTIONAL } from '../lib/constants'
+import { INBOUND, OUTBOUND, BIDIRECTIONAL } from '../lib'
 import Dependency from './Dependency'
 import './Dependencies.css'
 
-function Dependencies({ inbounds, outbounds, onNameClick }) {
+const Dependencies = ({ inbounds, outbounds, onNameClick }) => {
     const dependencies = new Map()
     const confirmations = new Map()
     const types = new Map()
