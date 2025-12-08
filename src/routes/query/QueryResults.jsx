@@ -5,9 +5,9 @@ import './QueryResults.css'
 const QueryResults = ({ queryResults, type, onNameClick }) => {
     return (
         <div className={`query-results ${type}`}>
-            {queryResults.map(result => (
+            {queryResults.map(result =>
                 <QueryResult key={result.name} queryResult={result} onNameClick={onNameClick} />
-            ))}
+            )}
         </div>
     )
 }

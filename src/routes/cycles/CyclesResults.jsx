@@ -5,9 +5,9 @@ import './CyclesResults.css'
 const CyclesResults = ({ cyclesResults }) => {
     return (
         <div className={`cycles-results`}>
-            {cyclesResults.map(cycleResult => (
+            {cyclesResults.map(cycleResult =>
                 <CycleResults key={cycleResult.length} cycleResults={cycleResult} />
-            ))}
+            )}
         </div>
     )
 }

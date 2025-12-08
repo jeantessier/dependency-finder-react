@@ -13,14 +13,7 @@ const ClosureControls = ({ setClosureResults }) => {
     const { register, handleSubmit } = useForm()
 
     const [searchParams, setSearchParams] = useSearchParams()
-
-    const getStringParams = (name, defaultValue) => {
-        if (searchParams.has(name)) {
-            return searchParams.get(name)
-        } else {
-            return defaultValue
-        }
-    }
+    const getStringParams = (name, defaultValue) => searchParams.has(name) ? searchParams.get(name) : defaultValue
 
     const [startIncludes, setStartIncludes] = useState(getStringParams('startIncludes', '//'))
     const handleStartIncludes = e => setStartIncludes(e.target.value)

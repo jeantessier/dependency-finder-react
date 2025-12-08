@@ -13,22 +13,8 @@ const QueryControls = ({ setQueryResults }) => {
     const { register, handleSubmit } = useForm()
 
     const [searchParams, setSearchParams] = useSearchParams()
-
-    const getStringParams = (name, defaultValue) => {
-        if (searchParams.has(name)) {
-            return searchParams.get(name)
-        } else {
-            return defaultValue
-        }
-    }
-
-    const getBooleanParams = (name, defaultValue) => {
-        if (searchParams.has(name)) {
-            return searchParams.get(name) === 'true'
-        } else {
-            return defaultValue
-        }
-    }
+    const getStringParams = (name, defaultValue) => searchParams.has(name) ? searchParams.get(name) : defaultValue
+    const getBooleanParams = (name, defaultValue) => searchParams.has(name) ? searchParams.get(name) === 'true' : defaultValue
 
     const [scopeIncludes, setScopeIncludes] = useState(getStringParams('scopeIncludes', '//'))
     const handleScopeIncludes = e => setScopeIncludes(e.target.value)

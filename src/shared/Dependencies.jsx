@@ -21,9 +21,9 @@ const Dependencies = ({ inbounds, outbounds, onNameClick }) => {
 
     return (
         <div className="dependencies">
-            {dependencies.keys().toArray().sort().map(name => (
+            {dependencies.keys().toArray().sort().map(name =>
                 <Dependency key={name} direction={dependencies.get(name)} type={types.get(name)} name={name} confirmed={confirmations.get(name)} onNameClick={onNameClick} />
-            ))}
+            )}
         </div>
     )
 }

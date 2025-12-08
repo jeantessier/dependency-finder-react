@@ -2,11 +2,7 @@ import PropTypes from 'prop-types'
 import './Name.css'
 
 const Name = ({ name, onNameClick }) => {
-    const handleClick = e => {
-        if (onNameClick) {
-            onNameClick(e.target.textContent)
-        }
-    }
+    const handleClick = e => onNameClick && onNameClick(e.target.textContent)
 
     return (
         <span className="name" onClick={handleClick}>{name}</span>
