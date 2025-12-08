@@ -31,69 +31,43 @@ const QueryControls = ({ setQueryResults }) => {
     }
 
     const [scopeIncludes, setScopeIncludes] = useState(getStringParams('scopeIncludes', '//'))
-    const handleScopeIncludes = e => {
-        setScopeIncludes(e.target.value)
-    }
+    const handleScopeIncludes = e => setScopeIncludes(e.target.value)
 
     const [scopeExcludes, setScopeExcludes] = useState(getStringParams('scopeExcludes', ''))
-    const handleScopeExcludes = e => {
-        setScopeExcludes(e.target.value)
-    }
+    const handleScopeExcludes = e => setScopeExcludes(e.target.value)
 
     const [packageScope, setPackageScope] = useState(getBooleanParams('packageScope', true))
-    const handlePackageScope = () => {
-        setPackageScope(!packageScope)
-    }
+    const handlePackageScope = () => setPackageScope(!packageScope)
 
     const [classScope, setClassScope] = useState(getBooleanParams('classScope', false))
-    const handleClassScope = () => {
-        setClassScope(!classScope)
-    }
+    const handleClassScope = () => setClassScope(!classScope)
 
     const [featureScope, setFeatureScope] = useState(getBooleanParams('featureScope', false))
-    const handleFeatureScope = () => {
-        setFeatureScope(!featureScope)
-    }
+    const handleFeatureScope = () => setFeatureScope(!featureScope)
 
     const [filterIncludes, setFilterIncludes] = useState(getStringParams('filterIncludes', '//'))
-    const handleFilterIncludes = e => {
-        setFilterIncludes(e.target.value)
-    }
+    const handleFilterIncludes = e => setFilterIncludes(e.target.value)
 
     const [filterExcludes, setFilterExcludes] = useState(getStringParams('filterExcludes', ''))
-    const handleFilterExcludes = e => {
-        setFilterExcludes(e.target.value)
-    }
+    const handleFilterExcludes = e => setFilterExcludes(e.target.value)
 
     const [packageFilter, setPackageFilter] = useState(getBooleanParams('packageFilter', true))
-    const handlePackageFilter = () => {
-        setPackageFilter(!packageFilter)
-    }
+    const handlePackageFilter = () => setPackageFilter(!packageFilter)
 
     const [classFilter, setClassFilter] = useState(getBooleanParams('classFilter', false))
-    const handleClassFilter = () => {
-        setClassFilter(!classFilter)
-    }
+    const handleClassFilter = () => setClassFilter(!classFilter)
 
     const [featureFilter, setFeatureFilter] = useState(getBooleanParams('featureFilter', false))
-    const handleFeatureFilter = () => {
-        setFeatureFilter(!featureFilter)
-    }
+    const handleFeatureFilter = () => setFeatureFilter(!featureFilter)
 
     const [showInbounds, setShowInbounds] = useState(getBooleanParams('showInbounds', true))
-    const handleShowInbounds = () => {
-        setShowInbounds(!showInbounds)
-    }
+    const handleShowInbounds = () => setShowInbounds(!showInbounds)
 
     const [showOutbounds, setShowOutbounds] = useState(getBooleanParams('showOutbounds', true))
-    const handleShowOutbounds = () => {
-        setShowOutbounds(!showOutbounds)
-    }
+    const handleShowOutbounds = () => setShowOutbounds(!showOutbounds)
 
     const [showEmptyNodes, setShowEmptyNodes] = useState(getBooleanParams('showEmptyNodes', true))
-    const handleShowEmptyNodes = () => {
-        setShowEmptyNodes(!showEmptyNodes)
-    }
+    const handleShowEmptyNodes = () => setShowEmptyNodes(!showEmptyNodes)
 
     const onSubmit = data => {
         const request = new Request(QUERY_URL, {

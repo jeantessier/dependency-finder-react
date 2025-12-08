@@ -23,44 +23,28 @@ const ClosureControls = ({ setClosureResults }) => {
     }
 
     const [startIncludes, setStartIncludes] = useState(getStringParams('startIncludes', '//'))
-    const handleStartIncludes = e => {
-        setStartIncludes(e.target.value)
-    }
+    const handleStartIncludes = e => setStartIncludes(e.target.value)
 
     const [startExcludes, setStartExcludes] = useState(getStringParams('startExcludes', ''))
-    const handleStartExcludes = e => {
-        setStartExcludes(e.target.value)
-    }
+    const handleStartExcludes = e => setStartExcludes(e.target.value)
 
     const [stopIncludes, setStopIncludes] = useState(getStringParams('stopIncludes', ''))
-    const handleStopIncludes = e => {
-        setStopIncludes(e.target.value)
-    }
+    const handleStopIncludes = e => setStopIncludes(e.target.value)
 
     const [stopExcludes, setStopExcludes] = useState(getStringParams('stopExcludes', ''))
-    const handleStopExcludes = e => {
-        setStopExcludes(e.target.value)
-    }
+    const handleStopExcludes = e => setStopExcludes(e.target.value)
 
     const [maximumInboundDepth, setMaximumInboundDepth] = useState(getStringParams('maximumInboundDepth', '0'))
-    const handleMaximumInboundDepth = e => {
-        setMaximumInboundDepth(e.target.value)
-    }
+    const handleMaximumInboundDepth = e => setMaximumInboundDepth(e.target.value)
 
     const [maximumOutboundDepth, setMaximumOutboundDepth] = useState(getStringParams('maximumOutboundDepth', ''))
-    const handleMaximumOutboundDepth = e => {
-        setMaximumOutboundDepth(e.target.value)
-    }
+    const handleMaximumOutboundDepth = e => setMaximumOutboundDepth(e.target.value)
 
     const [scope, setScope] = useState(getStringParams('scope', 'feature'))
-    const handleScope = e => {
-        setScope(e.target.value)
-    }
+    const handleScope = e => setScope(e.target.value)
 
     const [filter, setFilter] = useState(getStringParams('filter', 'feature'))
-    const handleFilter = e => {
-        setFilter(e.target.value)
-    }
+    const handleFilter = e => setFilter(e.target.value)
 
     const onSubmit = data => {
         const request = new Request(CLOSURE_URL, {

@@ -31,34 +31,22 @@ const CyclesControls = ({ setCyclesResults }) => {
     }
 
     const [scopeIncludes, setScopeIncludes] = useState(getStringParams('scopeIncludes', '//'))
-    const handleScopeIncludes = e => {
-        setScopeIncludes(e.target.value)
-    }
+    const handleScopeIncludes = e => setScopeIncludes(e.target.value)
 
     const [scopeExcludes, setScopeExcludes] = useState(getStringParams('scopeExcludes', ''))
-    const handleScopeExcludes = e => {
-        setScopeExcludes(e.target.value)
-    }
+    const handleScopeExcludes = e => setScopeExcludes(e.target.value)
 
     const [packageScope, setPackageScope] = useState(getBooleanParams('packageScope', true))
-    const handlePackageScope = () => {
-        setPackageScope(!packageScope)
-    }
+    const handlePackageScope = () => setPackageScope(!packageScope)
 
     const [classScope, setClassScope] = useState(getBooleanParams('classScope', false))
-    const handleClassScope = () => {
-        setClassScope(!classScope)
-    }
+    const handleClassScope = () => setClassScope(!classScope)
 
     const [featureScope, setFeatureScope] = useState(getBooleanParams('featureScope', false))
-    const handleFeatureScope = () => {
-        setFeatureScope(!featureScope)
-    }
+    const handleFeatureScope = () => setFeatureScope(!featureScope)
 
     const [maximumCycleLength, setMaximumCycleLength] = useState(getStringParams('maximumCycleLength', ''))
-    const handleMaximumCycleLength = e => {
-        setMaximumCycleLength(e.target.value)
-    }
+    const handleMaximumCycleLength = e => setMaximumCycleLength(e.target.value)
 
     const onSubmit = (data) => {
         const request = new Request(CYCLES_URL, {

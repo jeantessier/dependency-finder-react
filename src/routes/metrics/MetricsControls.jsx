@@ -31,69 +31,43 @@ const MetricsControls = ({ setMetricsResults }) => {
     }
 
     const [scopeIncludes, setScopeIncludes] = useState(getStringParams('scopeIncludes', '//'))
-    const handleScopeIncludes = e => {
-        setScopeIncludes(e.target.value)
-    }
+    const handleScopeIncludes = e => setScopeIncludes(e.target.value)
 
     const [scopeExcludes, setScopeExcludes] = useState(getStringParams('scopeExcludes', ''))
-    const handleScopeExcludes = e => {
-        setScopeExcludes(e.target.value)
-    }
+    const handleScopeExcludes = e => setScopeExcludes(e.target.value)
 
     const [packageScope, setPackageScope] = useState(getBooleanParams('packageScope', true))
-    const handlePackageScope = () => {
-        setPackageScope(!packageScope)
-    }
+    const handlePackageScope = () => setPackageScope(!packageScope)
 
     const [classScope, setClassScope] = useState(getBooleanParams('classScope', true))
-    const handleClassScope = () => {
-        setClassScope(!classScope)
-    }
+    const handleClassScope = () => setClassScope(!classScope)
 
     const [featureScope, setFeatureScope] = useState(getBooleanParams('featureScope', true))
-    const handleFeatureScope = () => {
-        setFeatureScope(!featureScope)
-    }
+    const handleFeatureScope = () => setFeatureScope(!featureScope)
 
     const [filterIncludes, setFilterIncludes] = useState(getStringParams('filterIncludes', '//'))
-    const handleFilterIncludes = e => {
-        setFilterIncludes(e.target.value)
-    }
+    const handleFilterIncludes = e => setFilterIncludes(e.target.value)
 
     const [filterExcludes, setFilterExcludes] = useState(getStringParams('filterExcludes', ''))
-    const handleFilterExcludes = e => {
-        setFilterExcludes(e.target.value)
-    }
+    const handleFilterExcludes = e => setFilterExcludes(e.target.value)
 
     const [packageFilter, setPackageFilter] = useState(getBooleanParams('packageFilter', true))
-    const handlePackageFilter = () => {
-        setPackageFilter(!packageFilter)
-    }
+    const handlePackageFilter = () => setPackageFilter(!packageFilter)
 
     const [classFilter, setClassFilter] = useState(getBooleanParams('classFilter', true))
-    const handleClassFilter = () => {
-        setClassFilter(!classFilter)
-    }
+    const handleClassFilter = () => setClassFilter(!classFilter)
 
     const [featureFilter, setFeatureFilter] = useState(getBooleanParams('featureFilter', true))
-    const handleFeatureFilter = () => {
-        setFeatureFilter(!featureFilter)
-    }
+    const handleFeatureFilter = () => setFeatureFilter(!featureFilter)
 
     const [listElements, setListElements] = useState(getBooleanParams('listElements', false))
-    const handleListElements = () => {
-        setListElements(!listElements)
-    }
+    const handleListElements = () => setListElements(!listElements)
 
     const [chart, setChart] = useState(getBooleanParams('chart', false))
-    const handleChart = () => {
-        setChart(!chart)
-    }
+    const handleChart = () => setChart(!chart)
 
     const [histograms, setHistograms] = useState(getBooleanParams('histograms', false))
-    const handleHistograms = () => {
-        setHistograms(!histograms)
-    }
+    const handleHistograms = () => setHistograms(!histograms)
 
     const onSubmit = data => {
         const request = new Request(METRICS_URL, {
