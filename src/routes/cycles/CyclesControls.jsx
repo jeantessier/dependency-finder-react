@@ -115,8 +115,7 @@ const CyclesControls = ({ setCyclesResults }) => {
                                 title="Maximum length of dependency cycles.  Empty field means no limit."
                                 htmlFor="maximumCycleLength">
                                 <input {...register("maximumCycleLength")}
-                                       name="maximumCycleLength"
-                                       id="maximumCycleLength"
+                                       name="maximumCycleLength" id="maximumCycleLength"
                                        size={2}
                                        defaultValue={maximumCycleLength}
                                        onChange={handleMaximumCycleLength}/>
