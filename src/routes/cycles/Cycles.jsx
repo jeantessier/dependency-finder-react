@@ -1,6 +1,6 @@
 import { useState } from 'react'
-import { Footer } from '../../shared'
 import { useTitle } from '../../hooks'
+import { Footer } from '../../shared'
 import CyclesControls from './CyclesControls'
 import CyclesResults from './CyclesResults'
 import './Cycles.css'
