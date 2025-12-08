@@ -8,7 +8,7 @@ legend {
     width: fit-content;
 }
 
-.query-controls form {
+.query-controls {
     display: grid;
     grid-template-columns: 1fr 1fr;
 }
