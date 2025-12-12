@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types'
 import { useEffect } from 'react'
-import { Link } from 'react-router-dom'
+import { Link } from 'react-router'
 import { useVersion } from '../../hooks'
 import { QUERY_URL, INBOUND, OUTBOUND } from '../../lib'
 import { NavBar, Title } from '../../shared'

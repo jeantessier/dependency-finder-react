@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom'
+import { Link } from 'react-router'
 import { useStats, useVersion } from '../hooks'
 import './Footer.css'
 

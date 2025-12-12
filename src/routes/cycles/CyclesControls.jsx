@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types'
 import { useState } from 'react'
 import { useForm } from 'react-hook-form'
-import { Link, useSearchParams } from 'react-router-dom'
+import { Link, useSearchParams } from 'react-router'
 import { useVersion } from '../../hooks'
 import { CYCLES_URL } from '../../lib'
 import { NavBar, Title } from '../../shared'

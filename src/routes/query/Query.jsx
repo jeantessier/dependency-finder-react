@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { useSearchParams } from 'react-router-dom'
+import { useSearchParams } from 'react-router'
 import { Footer } from '../../shared'
 import { useTitle } from '../../hooks'
 import QueryControls from './QueryControls'

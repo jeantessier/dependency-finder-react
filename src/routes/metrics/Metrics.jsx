@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { useSearchParams } from 'react-router-dom'
+import { useSearchParams } from 'react-router'
 import { useTitle } from '../../hooks'
 import { Footer } from '../../shared'
 import MetricsControls from './MetricsControls'
