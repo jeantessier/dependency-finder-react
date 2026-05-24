@@ -20,7 +20,7 @@ const ClosureControls = ({ form, handleTextChange, setClosureResults }) => {
                     body: JSON.stringify(form),
                 })
                 const response = await fetch(request)
-                setClosureResults(await response.json())
+                if (response.ok) setClosureResults(await response.json())
             }
 
             submitForm()

@@ -9,7 +9,6 @@ import './MetricsControls.css'
 const MetricsControls = ({ form, handleTextChange, handleFlagChange, setMetricsResults }) => {
     const { version, isLoading: versionIsLoading, isError: versionIsError } = useVersion()
 
-
     useEffect(
         () => {
             const submitForm = async () => {
@@ -21,7 +20,7 @@ const MetricsControls = ({ form, handleTextChange, handleFlagChange, setMetricsR
                     body: JSON.stringify(form),
                 })
                 const response = await fetch(request)
-                setMetricsResults(await response.json())
+                if (response.ok) setMetricsResults(await response.json())
             }
 
             submitForm()

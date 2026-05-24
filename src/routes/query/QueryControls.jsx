@@ -20,7 +20,7 @@ const QueryControls = ({ form, handleTextChange, handleFlagChange, setQueryResul
                     body: JSON.stringify(form),
                 })
                 const response = await fetch(request)
-                setQueryResults(await response.json())
+                if (response.ok) setQueryResults(await response.json())
             }
 
             submitForm()

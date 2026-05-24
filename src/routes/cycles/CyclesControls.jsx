@@ -34,7 +34,7 @@ const CyclesControls = ({ setCyclesResults }) => {
     const [maximumCycleLength, setMaximumCycleLength] = useState(getStringParams('maximumCycleLength', ''))
     const handleMaximumCycleLength = e => setMaximumCycleLength(e.target.value)
 
-    const onSubmit = (data) => {
+    const onSubmit = async data => {
         const request = new Request(CYCLES_URL, {
             method: "POST",
             headers: {
@@ -42,9 +42,8 @@ const CyclesControls = ({ setCyclesResults }) => {
             },
             body: JSON.stringify(data),
         })
-        fetch(request)
-            .then(response => response.json())
-            .then(json => setCyclesResults(json))
+        const response = await fetch(request)
+        if (response.ok) setCyclesResults(await response.json())
         setSearchParams(data)
     }
 
