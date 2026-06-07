@@ -9,6 +9,13 @@ import './ClosureControls.css'
 const ClosureControls = ({ form, handleTextChange, setClosureResults }) => {
     const { version, isLoading: versionIsLoading, isError: versionIsError } = useVersion()
 
+    const handleChange = e => {
+        const textarea = e.target
+        textarea.style.height = 'auto'
+        textarea.style.height = textarea.scrollHeight + 'px'
+        handleTextChange(e)
+    }
+
     useEffect(
         () => {
             const submitForm = async () => {
@@ -39,15 +46,15 @@ const ClosureControls = ({ form, handleTextChange, setClosureResults }) => {
                     <legend>Start with programming elements</legend>
                     <div className="regex">
                         <label htmlFor="startIncludes">includes:</label>
-                        <input name="startIncludes" id="startIncludes"
-                               size={40}
-                               value={form.startIncludes}
-                               onChange={handleTextChange}/>
+                        <textarea name="startIncludes" id="startIncludes"
+                                  cols="40" rows="1"
+                                  value={form.startIncludes}
+                                  onChange={handleChange}/>
                         <label htmlFor="startExcludes">excludes:</label>
-                        <input name="startExcludes" id="startExcludes"
-                               size={40}
-                               value={form.startExcludes}
-                               onChange={handleTextChange}/>
+                        <textarea name="startExcludes" id="startExcludes"
+                                  cols="40" rows="1"
+                                  value={form.startExcludes}
+                                  onChange={handleChange}/>
                     </div>
                 </fieldset>
             </div>
@@ -57,15 +64,15 @@ const ClosureControls = ({ form, handleTextChange, setClosureResults }) => {
                     <legend>Stop with programming elements</legend>
                     <div className="regex">
                         <label htmlFor="stopIncludes">includes:</label>
-                        <input name="stopIncludes" id="stopIncludes"
-                               size={40}
-                               value={form.stopIncludes}
-                               onChange={handleTextChange}/>
+                        <textarea name="stopIncludes" id="stopIncludes"
+                                  cols="40" rows="1"
+                                  value={form.stopIncludes}
+                                  onChange={handleChange}/>
                         <label htmlFor="stopExcludes">excludes:</label>
-                        <input name="stopExcludes" id="stopExcludes"
-                               size={40}
-                               value={form.stopExcludes}
-                               onChange={handleTextChange}/>
+                        <textarea name="stopExcludes" id="stopExcludes"
+                                  cols="40" rows="1"
+                                  value={form.stopExcludes}
+                                  onChange={handleChange}/>
                     </div>
                 </fieldset>
             </div>

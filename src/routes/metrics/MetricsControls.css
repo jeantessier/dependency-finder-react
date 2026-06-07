@@ -19,6 +19,10 @@ legend {
     margin-left: 0.5rem;
 }
 
+.metrics-scope-controls fieldset {
+    height: stretch;
+}
+
 .regex {
     display: grid;
     grid-template-columns: 9ch auto;
@@ -26,8 +30,19 @@ legend {
     margin-top: 0.5rem;
 }
 
+.regex textarea {
+    resize: none;
+    overflow: hidden;
+    min-height: 1.5rem;
+    line-height: 1.5;
+}
+
 .metrics-filter-controls {
     margin-right: 0.5rem;
+}
+
+.metrics-filter-controls fieldset {
+    height: stretch;
 }
 
 .show-controls {

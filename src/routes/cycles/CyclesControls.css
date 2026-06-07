@@ -23,11 +23,22 @@ legend {
     grid-column: 1 / -1;
 }
 
+.cycle-scope-controls fieldset {
+    height: stretch;
+}
+
 .regex {
     display: grid;
     grid-template-columns: 9ch auto;
     row-gap: 0.25rem;
     margin-top: 0.5rem;
+}
+
+.regex textarea {
+    resize: none;
+    overflow: hidden;
+    min-height: 1.5rem;
+    line-height: 1.5;
 }
 
 .cycle-length-controls {

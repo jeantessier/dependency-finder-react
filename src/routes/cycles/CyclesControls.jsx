@@ -17,10 +17,20 @@ const CyclesControls = ({ setCyclesResults }) => {
     const getBooleanParams = (name, defaultValue) => searchParams.has(name) ? searchParams.get(name) === 'true' : defaultValue
 
     const [scopeIncludes, setScopeIncludes] = useState(getStringParams('scopeIncludes', '//'))
-    const handleScopeIncludes = e => setScopeIncludes(e.target.value)
+    const handleScopeIncludes = e => {
+        const textarea = e.target
+        textarea.style.height = 'auto'
+        textarea.style.height = textarea.scrollHeight + 'px'
+        setScopeIncludes(textarea.value)
+    }
 
     const [scopeExcludes, setScopeExcludes] = useState(getStringParams('scopeExcludes', ''))
-    const handleScopeExcludes = e => setScopeExcludes(e.target.value)
+    const handleScopeExcludes = e => {
+        const textarea = e.target
+        textarea.style.height = 'auto'
+        textarea.style.height = textarea.scrollHeight + 'px'
+        setScopeExcludes(textarea.value)
+    }
 
     const [packageScope, setPackageScope] = useState(getBooleanParams('packageScope', true))
     const handlePackageScope = () => setPackageScope(!packageScope)
@@ -90,15 +100,15 @@ const CyclesControls = ({ setCyclesResults }) => {
                         </span>
                         <div className="regex">
                             <label htmlFor="scopeIncludes">includes:</label>
-                            <input {...register("scopeIncludes")}
+                            <textarea {...register("scopeIncludes")}
                                    name="scopeIncludes" id="scopeIncludes"
-                                   size={40}
+                                   cols="40" rows="1"
                                    defaultValue={scopeIncludes}
                                    onChange={handleScopeIncludes}/>
                             <label htmlFor="scopeExcludes">excludes:</label>
-                            <input {...register("scopeExcludes")}
+                            <textarea {...register("scopeExcludes")}
                                    name="scopeExcludes" id="scopeExcludes"
-                                   size={40}
+                                   cols="40" rows="1"
                                    defaultValue={scopeExcludes}
                                    onChange={handleScopeExcludes}/>
                         </div>

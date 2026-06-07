@@ -9,6 +9,13 @@ import './QueryControls.css'
 const QueryControls = ({ form, handleTextChange, handleFlagChange, setQueryResults }) => {
     const { version, isLoading: versionIsLoading, isError: versionIsError } = useVersion()
 
+    const handleChange = e => {
+        const textarea = e.target
+        textarea.style.height = 'auto'
+        textarea.style.height = textarea.scrollHeight + 'px'
+        handleTextChange(e)
+    }
+
     useEffect(
         () => {
             const submitForm = async () => {
@@ -69,15 +76,15 @@ const QueryControls = ({ form, handleTextChange, handleFlagChange, setQueryResul
                     </span>
                     <div className="regex">
                         <label htmlFor="scopeIncludes">includes:</label>
-                        <input name="scopeIncludes" id="scopeIncludes"
-                               size={40}
-                               value={form.scopeIncludes}
-                               onChange={handleTextChange}/>
+                        <textarea name="scopeIncludes" id="scopeIncludes"
+                                  cols="40" rows="1"
+                                  value={form.scopeIncludes}
+                                  onChange={handleChange}/>
                         <label htmlFor="scopeExcludes">excludes:</label>
-                        <input name="scopeExcludes" id="scopeExcludes"
-                               size={40}
-                               value={form.scopeExcludes}
-                               onChange={handleTextChange}/>
+                        <textarea name="scopeExcludes" id="scopeExcludes"
+                                  cols="40" rows="1"
+                                  value={form.scopeExcludes}
+                                  onChange={handleChange}/>
                     </div>
                 </fieldset>
             </div>
@@ -117,15 +124,15 @@ const QueryControls = ({ form, handleTextChange, handleFlagChange, setQueryResul
                     </span>
                     <div className="regex">
                         <label htmlFor="filterIncludes">includes:</label>
-                        <input name="filterIncludes" id="filterIncludes"
-                               size={40}
-                               value={form.filterIncludes}
-                               onChange={handleTextChange}/>
+                        <textarea name="filterIncludes" id="filterIncludes"
+                                  cols="40" rows="1"
+                                  value={form.filterIncludes}
+                                  onChange={handleChange}/>
                         <label htmlFor="filterExcludes">excludes:</label>
-                        <input name="filterExcludes" id="filterExcludes"
-                               size={40}
-                               value={form.filterExcludes}
-                               onChange={handleTextChange}/>
+                        <textarea name="filterExcludes" id="filterExcludes"
+                                  cols="40" rows="1"
+                                  value={form.filterExcludes}
+                                  onChange={handleChange}/>
                     </div>
                 </fieldset>
             </div>
